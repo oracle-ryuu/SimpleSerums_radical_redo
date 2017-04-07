@@ -30,7 +30,8 @@ void searchInventory::on_pushButton_clicked()
         if(qry.next()){
             name = qry.value(1).toString();
             count = qry.value(2).toString();
-            QMessageBox::critical(this,tr("Found"),tr("Item Found!"));
+            QString info = "name: " + name + "\ncount: " + count;
+	    QMessageBox::information(this, "Info", info);
         }
         else{
             QMessageBox::critical(this,tr("Not Found"),tr("Item Not Found!"));
