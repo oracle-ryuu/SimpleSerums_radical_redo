@@ -1,0 +1,49 @@
+#include "searchinventory.h"
+#include "ui_searchinventory.h"
+#include <QString>
+#include <QMessageBox>
+
+
+searchInventory::searchInventory(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::searchInventory)
+{
+    ui->setupUi(this);
+    db.connOpen();
+}
+
+searchInventory::~searchInventory()
+{
+    delete ui;
+    db.connClose();
+}
+
+void searchInventory::on_pushButton_clicked()
+{
+    QString ID = ui->lineEdit->text();
+    //SEARCH DATABASE WITH SQL
+    QString name,count; //output qstrings
+    QSqlQuery qry;
+    qry.prepare("select * from ITEM where i_id=:i_id");
+    qry.bindValue(":i_id", ID);
+    if(qry.exec()){
+        if(qry.next()){
+            name = qry.value(1).toString();
+            count = qry.value(2).toString();
+            QMessageBox::critical(this,tr("Found"),tr("Item Found!"));
+        }
+        else{
+            QMessageBox::critical(this,tr("Not Found"),tr("Item Not Found!"));
+        }
+
+    }
+    else{
+        QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
+    }
+
+}
+
+void searchInventory::on_pushButton_2_clicked()
+{
+    this->hide();
+}
