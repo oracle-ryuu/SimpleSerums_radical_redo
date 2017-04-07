@@ -37,7 +37,16 @@ void searchpatient::on_pushButton_2_clicked()
             insuranceNum = qry.value(6).toString();
             doctor = qry.value(7).toString();
             //CHANGE THIS MESSAGE BOX
-            QMessageBox::critical(this,tr("Found"),tr("Patient Found!"));
+            QString info = "Patient Name: " + name;
+                    info+= "\nDate of Birth: " + DOB;
+                    info+= "\nAddress: " + address;
+                    info+= "\nSex: " + sex;
+                    info+= "\nPhone Number: " + phone;
+                    info+= "\nInsurance Provider: " + insurance;
+                    info+= "\nInusrance Number: " + insuranceNum;
+                    info+= "\nDoctor: " + doctor;
+
+            QMessageBox::information(this, "Info", info);
         }
         else{
             QMessageBox::critical(this,tr("Not Found"),tr("Patient Not Found!"));
