@@ -1,5 +1,6 @@
 #include "maindirectory.h"
 #include "ui_maindirectory.h"
+#include "consultprescript.h"
 #include <QMessageBox>
 
 MainDirectory::MainDirectory(QWidget *parent) :
@@ -11,6 +12,9 @@ MainDirectory::MainDirectory(QWidget *parent) :
     ui->label_2->hide();
     ui->pushButton_8->hide();
     ui->pushButton_9->hide();
+
+    connect(ui->listWidget, SIGNAL(itemClicked(QListWidgetItem*)),
+            this, SLOT(listItemClicked(QListWidgetItem*)));
 }
 
 MainDirectory::~MainDirectory()
@@ -81,21 +85,25 @@ void MainDirectory::on_pushButton_9_clicked()
     SSN = ui->lineEdit_2->text();
     ui->lineEdit_2->clear();
 
-    QString name;
+    QListWidgetItem *name = new QListWidgetItem;
     QSqlQuery qry;
-    qry.prepare("select p_name from PATIENT where p_ssn=:p_ssn ");
+    qry.prepare("select p_name, p_ssn from PATIENT where p_ssn=:p_ssn ");
     qry.bindValue(":p_ssn",SSN);
     if(qry.exec()){
         if(qry.next()){
             QList<QObject*> obj = ui->listWidget->children();
-            name = qry.value(0).toString();
+            name->setText(qry.value(0).toString());
             bool add = true;
             for(int i = 0; i < ui->listWidget->count(); i++){
-                if(ui->listWidget->item(i)->data(0).toString() == name ){
+                if(ui->listWidget->item(i)->data(0).toString() == name->text() ){
                     add = false;
                 }
             }
             if (add){
+                //embed SSN to name
+                QVariant v;
+                v.setValue(qry.value(1));
+                name->setData(Qt::UserRole, v);
                 ui->listWidget->addItem(name);
             }
             else{
@@ -115,4 +123,14 @@ void MainDirectory::on_pushButton_9_clicked()
     ui->label_2->hide();
     ui->pushButton_8->hide();
     ui->pushButton_9->hide();
+}
+
+//bring up window to allow addition of consultion/prescription
+void MainDirectory::listItemClicked(QListWidgetItem* item)
+{
+    //retrieve SSN from the name(item)
+    QVariant v = item->data(Qt::UserRole);
+    QMessageBox::information(this, "SSN check", v.value<QString>());
+    consultPrescript* _consultPrescript = new consultPrescript(this);
+    _consultPrescript->show();
 }

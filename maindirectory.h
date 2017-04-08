@@ -1,6 +1,7 @@
 #ifndef MAINDIRECTORY_H
 #define MAINDIRECTORY_H
 
+#include <QListWidgetItem>
 #include <QDialog>
 #include "addpatient.h"
 #include "addinventory.h"
@@ -42,6 +43,9 @@ private slots:
     void on_pushButton_8_clicked();
 
     void on_pushButton_9_clicked();
+
+    void listItemClicked(QListWidgetItem*);
+
 
 private:
     Ui::MainDirectory *ui;
