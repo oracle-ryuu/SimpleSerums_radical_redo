@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>consultPrescript</class>
  <widget class="QDialog" name="consultPrescript">
@@ -12,6 +13,106 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>321</width>
+     <height>235</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_3_Patient_name">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>[+] Patients name</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Timestamp</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateTimeEdit" name="dateTimeEdit">
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="date">
+         <date>
+          <year>2017</year>
+          <month>4</month>
+          <day>7</day>
+         </date>
+        </property>
+        <property name="time">
+         <time>
+          <hour>8</hour>
+          <minute>0</minute>
+          <second>0</second>
+         </time>
+        </property>
+        <property name="minimumTime">
+         <time>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+         </time>
+        </property>
+        <property name="currentSection">
+         <enum>QDateTimeEdit::YearSection</enum>
+        </property>
+        <property name="displayFormat">
+         <string>yyyy-MM-dd hh:mm </string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="timeSpec">
+         <enum>Qt::LocalTime</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Consult</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="text">
+       <string>Precription for this Patient?</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Continue</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -91,7 +91,6 @@ void MainDirectory::on_pushButton_9_clicked()
     qry.bindValue(":p_ssn",SSN);
     if(qry.exec()){
         if(qry.next()){
-            QList<QObject*> obj = ui->listWidget->children();
             name->setText(qry.value(0).toString());
             bool add = true;
             for(int i = 0; i < ui->listWidget->count(); i++){
@@ -133,4 +132,5 @@ void MainDirectory::listItemClicked(QListWidgetItem* item)
     QMessageBox::information(this, "SSN check", v.value<QString>());
     consultPrescript* _consultPrescript = new consultPrescript(this);
     _consultPrescript->show();
+    _consultPrescript->ssn = v.value<QString>();
 }

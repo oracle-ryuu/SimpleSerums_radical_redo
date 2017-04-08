@@ -21,8 +21,8 @@ addInventory::~addInventory()
 void addInventory::on_pushButton_clicked()
 {
     QString item_id = ui->lineEdit->text();
-    QString item_name = ui->lineEdit->text();
-    QString item_quantity = ui->lineEdit->text();
+    QString item_name = ui->lineEdit_2->text();
+    QString item_quantity = ui->lineEdit_3->text();
 
     //CHECK VALIDITY OF INPUT
 

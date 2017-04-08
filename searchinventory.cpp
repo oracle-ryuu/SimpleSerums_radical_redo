@@ -24,12 +24,12 @@ void searchInventory::on_pushButton_clicked()
     //SEARCH DATABASE WITH SQL
     QString name,count; //output qstrings
     QSqlQuery qry;
-    qry.prepare("select * from ITEM where i_id=:i_id");
+    qry.prepare("select i_name,i_count from ITEM where i_id=:i_id");
     qry.bindValue(":i_id", ID);
     if(qry.exec()){
         if(qry.next()){
-            name = qry.value(1).toString();
-            count = qry.value(2).toString();
+            name = qry.value(0).toString();
+            count = qry.value(1).toString();
             QString info = "name: " + name + "\ncount: " + count;
 	    QMessageBox::information(this, "Info", info);
         }
