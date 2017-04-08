@@ -133,4 +133,5 @@ void MainDirectory::listItemClicked(QListWidgetItem* item)
     consultPrescript* _consultPrescript = new consultPrescript(this);
     _consultPrescript->show();
     _consultPrescript->ssn = v.value<QString>();
+    item->setHidden(true);
 }
