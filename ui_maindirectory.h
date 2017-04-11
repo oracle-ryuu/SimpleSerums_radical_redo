@@ -119,7 +119,7 @@ public:
         listWidget_2->setGeometry(QRect(640, 60, 141, 351));
         checkBox = new QCheckBox(MainDirectory);
         checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setGeometry(QRect(420, 140, 81, 21));
+        checkBox->setGeometry(QRect(420, 140, 121, 21));
         label = new QLabel(MainDirectory);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(270, 30, 121, 21));

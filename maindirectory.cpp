@@ -14,8 +14,12 @@ MainDirectory::MainDirectory(QWidget *parent) :
     ui->pushButton_9->hide();
     ui->checkBox->hide();
 
+    //standard
     connect(ui->listWidget, SIGNAL(itemClicked(QListWidgetItem*)),
             this, SLOT(listItemClicked(QListWidgetItem*)));
+    //emergency
+    connect(ui->listWidget_2, SIGNAL(itemClicked(QListWidgetItem*)),
+            this, SLOT(on_listWidget_2_itemClicked(QListWidgetItem*)));
 }
 
 MainDirectory::~MainDirectory()
@@ -166,10 +170,23 @@ void MainDirectory::on_pushButton_9_clicked()
     ui->checkBox->hide();
 }
 
-//bring up window to allow addition of consultion/prescription
+//bring up window to allow addition of consultation/prescription
+//standard
 void MainDirectory::listItemClicked(QListWidgetItem* item)
 {
     //retrieve SSN from the name(item)
+    QVariant v = item->data(Qt::UserRole);
+    QMessageBox::information(this, "SSN check", v.value<QString>());
+    consultPrescript* _consultPrescript = new consultPrescript(this);
+    _consultPrescript->show();
+    _consultPrescript->ssn = v.value<QString>();
+    item->setHidden(true);
+}
+
+//bring up window to allow addition of consultation/prescription
+//emergency
+void MainDirectory::on_listWidget_2_itemClicked(QListWidgetItem *item)
+{
     QVariant v = item->data(Qt::UserRole);
     QMessageBox::information(this, "SSN check", v.value<QString>());
     consultPrescript* _consultPrescript = new consultPrescript(this);

@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,12 +27,14 @@ class Ui_addInventory
 public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QLabel *label_2;
-    QLineEdit *lineEdit_3;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
     QLabel *label;
     QLineEdit *lineEdit;
     QLabel *label_3;
     QLineEdit *lineEdit_2;
+    QLabel *label_2;
+    QLineEdit *lineEdit_3;
 
     void setupUi(QWidget *addInventory)
     {
@@ -44,24 +47,42 @@ public:
         pushButton_2 = new QPushButton(addInventory);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(100, 190, 80, 25));
-        label_2 = new QLabel(addInventory);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(140, 125, 113, 17));
-        lineEdit_3 = new QLineEdit(addInventory);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(140, 146, 111, 21));
-        label = new QLabel(addInventory);
+        verticalLayoutWidget = new QWidget(addInventory);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(120, 10, 160, 171));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(verticalLayoutWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(140, 40, 76, 17));
-        lineEdit = new QLineEdit(addInventory);
+
+        verticalLayout->addWidget(label);
+
+        lineEdit = new QLineEdit(verticalLayoutWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(140, 60, 113, 17));
-        label_3 = new QLabel(addInventory);
+
+        verticalLayout->addWidget(lineEdit);
+
+        label_3 = new QLabel(verticalLayoutWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(140, 82, 97, 17));
-        lineEdit_2 = new QLineEdit(addInventory);
+
+        verticalLayout->addWidget(label_3);
+
+        lineEdit_2 = new QLineEdit(verticalLayoutWidget);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(140, 103, 113, 17));
+
+        verticalLayout->addWidget(lineEdit_2);
+
+        label_2 = new QLabel(verticalLayoutWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        verticalLayout->addWidget(label_2);
+
+        lineEdit_3 = new QLineEdit(verticalLayoutWidget);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+
+        verticalLayout->addWidget(lineEdit_3);
+
 
         retranslateUi(addInventory);
 
@@ -73,9 +94,9 @@ public:
         addInventory->setWindowTitle(QApplication::translate("addInventory", "Form", Q_NULLPTR));
         pushButton->setText(QApplication::translate("addInventory", "Add", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("addInventory", "Cancel", Q_NULLPTR));
-        label_2->setText(QApplication::translate("addInventory", "Enter Item Quantity", Q_NULLPTR));
         label->setText(QApplication::translate("addInventory", "Enter Item ID", Q_NULLPTR));
         label_3->setText(QApplication::translate("addInventory", "Enter Item Name", Q_NULLPTR));
+        label_2->setText(QApplication::translate("addInventory", "Enter Item Quantity", Q_NULLPTR));
     } // retranslateUi
 
 };

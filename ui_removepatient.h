@@ -63,7 +63,7 @@ public:
         label_2->setGeometry(QRect(30, 30, 91, 41));
         horizontalLayoutWidget = new QWidget(removepatient);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(120, 220, 281, 80));
+        horizontalLayoutWidget->setGeometry(QRect(60, 200, 281, 80));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);

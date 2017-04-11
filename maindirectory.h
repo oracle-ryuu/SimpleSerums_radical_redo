@@ -47,6 +47,8 @@ private slots:
     void listItemClicked(QListWidgetItem*);
 
 
+    void on_listWidget_2_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MainDirectory *ui;
      addInventory *_addinventory;

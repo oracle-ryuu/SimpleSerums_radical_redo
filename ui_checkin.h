@@ -38,10 +38,10 @@ public:
         checkIn->resize(400, 300);
         label = new QLabel(checkIn);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(100, 50, 121, 17));
+        label->setGeometry(QRect(100, 50, 171, 17));
         label_2 = new QLabel(checkIn);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(100, 120, 181, 17));
+        label_2->setGeometry(QRect(100, 120, 241, 17));
         lineEdit = new QLineEdit(checkIn);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(100, 70, 181, 25));
