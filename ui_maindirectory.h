@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -44,6 +45,7 @@ public:
     QPushButton *pushButton_9;
     QListWidget *listWidget;
     QListWidget *listWidget_2;
+    QCheckBox *checkBox;
 
     void setupUi(QDialog *MainDirectory)
     {
@@ -113,6 +115,9 @@ public:
         listWidget_2 = new QListWidget(MainDirectory);
         listWidget_2->setObjectName(QStringLiteral("listWidget_2"));
         listWidget_2->setGeometry(QRect(640, 60, 141, 351));
+        checkBox = new QCheckBox(MainDirectory);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(420, 140, 70, 17));
 
         retranslateUi(MainDirectory);
 
@@ -132,6 +137,7 @@ public:
         pushButton_8->setText(QApplication::translate("MainDirectory", "Cancel", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainDirectory", "Enter Patient SSN", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainDirectory", "Queue", Q_NULLPTR));
+        checkBox->setText(QApplication::translate("MainDirectory", "CheckBox", Q_NULLPTR));
     } // retranslateUi
 
 };

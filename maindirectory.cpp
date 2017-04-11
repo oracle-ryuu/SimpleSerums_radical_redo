@@ -12,6 +12,7 @@ MainDirectory::MainDirectory(QWidget *parent) :
     ui->label_2->hide();
     ui->pushButton_8->hide();
     ui->pushButton_9->hide();
+    ui->checkBox->hide();
 
     connect(ui->listWidget, SIGNAL(itemClicked(QListWidgetItem*)),
             this, SLOT(listItemClicked(QListWidgetItem*)));
@@ -69,6 +70,7 @@ void MainDirectory::on_pushButton_7_clicked()
     ui->label_2->show();
     ui->pushButton_8->show();
     ui->pushButton_9->show();
+    ui->checkBox->show();
 }
 
 void MainDirectory::on_pushButton_8_clicked()
@@ -78,6 +80,9 @@ void MainDirectory::on_pushButton_8_clicked()
     ui->pushButton_8->hide();
     ui->pushButton_9->hide();
     ui->lineEdit_2->clear();
+    ui->checkBox->hide();
+    if(ui->checkBox->isChecked())
+        ui->checkBox->setChecked(false);
 }
 
 void MainDirectory::on_pushButton_9_clicked()
@@ -89,39 +94,76 @@ void MainDirectory::on_pushButton_9_clicked()
     QSqlQuery qry;
     qry.prepare("select p_name, p_ssn from PATIENT where p_ssn=:p_ssn ");
     qry.bindValue(":p_ssn",SSN);
-    if(qry.exec()){
-        if(qry.next()){
-            name->setText(qry.value(0).toString());
-            bool add = true;
-            for(int i = 0; i < ui->listWidget->count(); i++){
-                if(ui->listWidget->item(i)->data(0).toString() == name->text() ){
-                    add = false;
+    if(ui->checkBox->isChecked())   //If the checkBox is checked for emergency
+    {
+        if(qry.exec()){
+            if(qry.next()){
+                name->setText(qry.value(0).toString());
+                bool add = true;
+                for(int i = 0; i < ui->listWidget_2->count(); i++){     //Put patient under emergency listwidget
+                    if(ui->listWidget_2->item(i)->data(0).toString() == name->text() ){
+                        add = false;
+                    }
                 }
-            }
-            if (add){
-                //embed SSN to name
-                QVariant v;
-                v.setValue(qry.value(1));
-                name->setData(Qt::UserRole, v);
-                ui->listWidget->addItem(name);
+                if (add){
+                    //embed SSN to name
+                    QVariant v;
+                    v.setValue(qry.value(1));
+                    name->setData(Qt::UserRole, v);
+                    ui->listWidget_2->addItem(name);
+                }
+                else{
+                    QMessageBox::critical(this,tr("Duplicate"),tr("Patient already checked in!"));
+                }
+
             }
             else{
-                QMessageBox::critical(this,tr("Duplicate"),tr("Patient already checked in!"));
+                QMessageBox::critical(this,tr("Not Found"),tr("Patient Not Found!\nTry adding Patient"));
             }
-
         }
         else{
-            QMessageBox::critical(this,tr("Not Found"),tr("Patient Not Found!\nTry adding Patient"));
+            QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
+        }
+        ui->checkBox->setChecked(false);
+    }
+    else    //If checkBox is not checked
+    {
+        if(qry.exec()){
+            if(qry.next()){
+                name->setText(qry.value(0).toString());
+                bool add = true;
+                for(int i = 0; i < ui->listWidget->count(); i++){
+                    if(ui->listWidget->item(i)->data(0).toString() == name->text() ){ //Put patient under standard listwidget
+                        add = false;
+                    }
+                }
+                if (add){
+                    //embed SSN to name
+                    QVariant v;
+                    v.setValue(qry.value(1));
+                    name->setData(Qt::UserRole, v);
+                    ui->listWidget->addItem(name);
+                }
+                else{
+                    QMessageBox::critical(this,tr("Duplicate"),tr("Patient already checked in!"));
+                }
+
+            }
+            else{
+                QMessageBox::critical(this,tr("Not Found"),tr("Patient Not Found!\nTry adding Patient"));
+            }
+        }
+        else{
+            QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
         }
     }
-    else{
-        QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
-    }
+
 
     ui->lineEdit_2->hide();
     ui->label_2->hide();
     ui->pushButton_8->hide();
     ui->pushButton_9->hide();
+    ui->checkBox->hide();
 }
 
 //bring up window to allow addition of consultion/prescription

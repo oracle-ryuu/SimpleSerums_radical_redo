@@ -23,6 +23,8 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_lineEdit_password_returnPressed();
+
 private:
     Ui::MainWindow *ui;
     MainDirectory *_maindirectory;
