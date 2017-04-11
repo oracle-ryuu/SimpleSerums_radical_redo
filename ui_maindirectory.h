@@ -46,6 +46,8 @@ public:
     QListWidget *listWidget;
     QListWidget *listWidget_2;
     QCheckBox *checkBox;
+    QLabel *label;
+    QLabel *label_3;
 
     void setupUi(QDialog *MainDirectory)
     {
@@ -117,7 +119,17 @@ public:
         listWidget_2->setGeometry(QRect(640, 60, 141, 351));
         checkBox = new QCheckBox(MainDirectory);
         checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setGeometry(QRect(420, 140, 70, 17));
+        checkBox->setGeometry(QRect(420, 140, 81, 21));
+        label = new QLabel(MainDirectory);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(270, 30, 121, 21));
+        QFont font;
+        font.setPointSize(12);
+        label->setFont(font);
+        label_3 = new QLabel(MainDirectory);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(670, 30, 121, 21));
+        label_3->setFont(font);
 
         retranslateUi(MainDirectory);
 
@@ -137,7 +149,9 @@ public:
         pushButton_8->setText(QApplication::translate("MainDirectory", "Cancel", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainDirectory", "Enter Patient SSN", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainDirectory", "Queue", Q_NULLPTR));
-        checkBox->setText(QApplication::translate("MainDirectory", "CheckBox", Q_NULLPTR));
+        checkBox->setText(QApplication::translate("MainDirectory", "Emergency", Q_NULLPTR));
+        label->setText(QApplication::translate("MainDirectory", "Standard", Q_NULLPTR));
+        label_3->setText(QApplication::translate("MainDirectory", "Emergency", Q_NULLPTR));
     } // retranslateUi
 
 };
