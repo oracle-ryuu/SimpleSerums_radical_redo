@@ -30,7 +30,7 @@ void prescription::on_buttonBox_accepted()
     qry.bindValue(":appoint", appointment);
     qry.bindValue(":amount",quantity);
     if(qry.exec()){
-        QMessageBox::critical(this,tr("Save"),tr("Prescription saved"));
+        QMessageBox::information(this,tr("Save"),tr("Prescription saved"));
         this->hide();
     }
     else{

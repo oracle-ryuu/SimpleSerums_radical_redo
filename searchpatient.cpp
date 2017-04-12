@@ -81,7 +81,7 @@ void searchpatient::on_pushButton_3_clicked()
             _listconsults->show();
          }
          else{
-             QMessageBox::critical(this,tr("Not Found"),tr("Patient Not Found!"));
+             QMessageBox::critical(this,tr("Not Found"),tr("Patient Not Found or no consults for this patient!"));
          }
 
      }

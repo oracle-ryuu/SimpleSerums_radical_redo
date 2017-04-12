@@ -60,7 +60,7 @@ public:
 
         label_2 = new QLabel(removepatient);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 30, 91, 41));
+        label_2->setGeometry(QRect(30, 30, 231, 41));
         horizontalLayoutWidget = new QWidget(removepatient);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(60, 200, 281, 80));

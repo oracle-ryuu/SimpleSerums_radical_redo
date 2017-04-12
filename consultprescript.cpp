@@ -29,7 +29,7 @@ void consultPrescript::on_pushButton_clicked()
     qry.bindValue(":appointment",ui->dateTimeEdit->text());
     qry.bindValue(":description",description);
     if(qry.exec()){
-        QMessageBox::critical(this,tr("Save"),tr("Consult saved"));
+        QMessageBox::information(this,tr("Save"),tr("Consult saved"));
         if(ui->checkBox->isChecked()){
             //Prescription box
             prescription *_prescription = new prescription(this);

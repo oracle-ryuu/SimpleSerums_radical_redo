@@ -38,7 +38,7 @@ void addInventory::on_pushButton_clicked()
     qry.bindValue(":i_count", item_quantity);
 
     if(qry.exec()){
-        QMessageBox::critical(this,tr("Save"),tr("Item saved"));
+        QMessageBox::information(this,tr("Save"),tr("Item saved"));
     }
     else{
         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());

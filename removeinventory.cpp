@@ -27,7 +27,7 @@ void removeInventory::on_pushButton_clicked()
     qry.bindValue(":i_id",item_id);
     if(qry.exec()){
         if(qry.numRowsAffected()>0){
-            QMessageBox::critical(this,tr("Delete"),tr("Item Deleted"));
+            QMessageBox::information(this,tr("Delete"),tr("Item Deleted"));
         }
         else{
             QMessageBox::critical(this,tr("Delete"),tr("Item does not exist\nCould not delete..."));

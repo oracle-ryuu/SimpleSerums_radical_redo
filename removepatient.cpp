@@ -25,7 +25,7 @@ void removepatient::on_ok_clicked()
     qry.bindValue(":p_ssn",ID);
     if(qry.exec()){
         if(qry.numRowsAffected()>0){
-            QMessageBox::critical(this,tr("Delete"),tr("Patient Deleted"));
+            QMessageBox::information(this,tr("Delete"),tr("Patient Deleted"));
         }
         else{
             QMessageBox::critical(this,tr("Delete"),tr("Patient does not exist\nCould not delete..."));
