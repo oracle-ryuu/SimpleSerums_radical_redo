@@ -17,9 +17,7 @@ MainDirectory::MainDirectory(QWidget *parent) :
     //standard
     connect(ui->listWidget, SIGNAL(itemClicked(QListWidgetItem*)),
             this, SLOT(listItemClicked(QListWidgetItem*)));
-    //emergency
-    connect(ui->listWidget_2, SIGNAL(itemClicked(QListWidgetItem*)),
-            this, SLOT(on_listWidget_2_itemClicked(QListWidgetItem*)));
+
 }
 
 MainDirectory::~MainDirectory()

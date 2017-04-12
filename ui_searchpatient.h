@@ -29,6 +29,7 @@ class Ui_searchpatient
 public:
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton_3;
     QPushButton *pushButton_2;
     QPushButton *pushButton;
     QWidget *verticalLayoutWidget;
@@ -43,10 +44,15 @@ public:
         searchpatient->resize(400, 300);
         horizontalLayoutWidget = new QWidget(searchpatient);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(59, 230, 241, 80));
+        horizontalLayoutWidget->setGeometry(QRect(59, 230, 263, 80));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_3 = new QPushButton(horizontalLayoutWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+
+        horizontalLayout->addWidget(pushButton_3);
+
         pushButton_2 = new QPushButton(horizontalLayoutWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
@@ -82,6 +88,7 @@ public:
     void retranslateUi(QDialog *searchpatient)
     {
         searchpatient->setWindowTitle(QApplication::translate("searchpatient", "Dialog", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("searchpatient", "Consults", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("searchpatient", "OK", Q_NULLPTR));
         pushButton->setText(QApplication::translate("searchpatient", "Cancel", Q_NULLPTR));
         label->setText(QApplication::translate("searchpatient", "Patient ID", Q_NULLPTR));

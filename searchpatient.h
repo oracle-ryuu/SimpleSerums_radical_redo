@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QtSql>
 #include "fordatabase.h"
+#include "listconsults.h"
 
 namespace Ui {
 class searchpatient;
@@ -23,8 +24,11 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::searchpatient *ui;
+    listconsults *_listconsults;
 };
 
 #endif // SEARCHPATIENT_H

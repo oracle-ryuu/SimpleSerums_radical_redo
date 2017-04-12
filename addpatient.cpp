@@ -53,7 +53,7 @@ void addPatient::on_pushButton_2_clicked()
     qry.bindValue(":p_insurance_num",ins_Nom);
     qry.bindValue(":p_doctor",doc_ID);
     if(qry.exec()){
-        QMessageBox::critical(this,tr("Save"),tr("Patient saved"));
+        QMessageBox::information(this,"Save","Patient saved");
     }
     else{
         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());

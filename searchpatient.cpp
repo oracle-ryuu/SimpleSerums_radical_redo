@@ -63,3 +63,26 @@ void searchpatient::on_pushButton_clicked()
 {
     this->hide();
 }
+
+void searchpatient::on_pushButton_3_clicked()
+{
+     QString ID = ui->ID->text();
+     QSqlQuery qry;
+     qry.prepare("select c_appointment,c_description from CONSULT where c_patient=:ID ");
+     qry.bindValue(":ID",ID);
+     if(qry.exec()){
+         if(qry.next()){
+            //QMessageBox::information(this,"info","Listing consults...");
+            _listconsults = new listconsults(this);
+            _listconsults->ID = ID;
+            _listconsults->show();
+         }
+         else{
+             QMessageBox::critical(this,tr("Not Found"),tr("Patient Not Found!"));
+         }
+
+     }
+     else{
+         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
+     }
+}

@@ -59,7 +59,8 @@ SOURCES       = main.cpp \
 		removepatient.cpp \
 		searchpatient.cpp \
 		consultprescript.cpp \
-		prescription.cpp moc_mainwindow.cpp \
+		prescription.cpp \
+		listconsults.cpp moc_mainwindow.cpp \
 		moc_searchinventory.cpp \
 		moc_removeinventory.cpp \
 		moc_addinventory.cpp \
@@ -69,7 +70,8 @@ SOURCES       = main.cpp \
 		moc_removepatient.cpp \
 		moc_searchpatient.cpp \
 		moc_consultprescript.cpp \
-		moc_prescription.cpp
+		moc_prescription.cpp \
+		moc_listconsults.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		searchinventory.o \
@@ -82,6 +84,7 @@ OBJECTS       = main.o \
 		searchpatient.o \
 		consultprescript.o \
 		prescription.o \
+		listconsults.o \
 		moc_mainwindow.o \
 		moc_searchinventory.o \
 		moc_removeinventory.o \
@@ -92,7 +95,8 @@ OBJECTS       = main.o \
 		moc_removepatient.o \
 		moc_searchpatient.o \
 		moc_consultprescript.o \
-		moc_prescription.o
+		moc_prescription.o \
+		moc_listconsults.o
 DIST          = /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/common/unix.conf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/common/linux.conf \
@@ -243,6 +247,7 @@ DIST          = /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -273,7 +278,8 @@ DIST          = /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		searchpatient.h \
 		fordatabase.h \
 		consultprescript.h \
-		prescription.h main.cpp \
+		prescription.h \
+		listconsults.h main.cpp \
 		mainwindow.cpp \
 		searchinventory.cpp \
 		removeinventory.cpp \
@@ -284,7 +290,8 @@ DIST          = /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		removepatient.cpp \
 		searchpatient.cpp \
 		consultprescript.cpp \
-		prescription.cpp
+		prescription.cpp \
+		listconsults.cpp
 QMAKE_TARGET  = SimpleSerum
 DESTDIR       = 
 TARGET        = SimpleSerum
@@ -293,7 +300,7 @@ TARGET        = SimpleSerum
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_listconsults.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: SimpleSerum.pro /home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
@@ -446,6 +453,7 @@ Makefile: SimpleSerum.pro /home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.co
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -621,6 +629,7 @@ Makefile: SimpleSerum.pro /home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.co
 /home/russell/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf:
 /home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/russell/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/russell/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf:
 /home/russell/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf:
@@ -660,9 +669,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/russell/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h searchinventory.h removeinventory.h addinventory.h checkin.h maindirectory.h addpatient.h removepatient.h searchpatient.h fordatabase.h consultprescript.h prescription.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp searchinventory.cpp removeinventory.cpp addinventory.cpp checkin.cpp maindirectory.cpp addpatient.cpp removepatient.cpp searchpatient.cpp consultprescript.cpp prescription.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.ui searchinventory.ui removeinventory.ui addinventory.ui checkin.ui maindirectory.ui addpatient.ui removepatient.ui searchpatient.ui consultprescript.ui prescription.ui $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h searchinventory.h removeinventory.h addinventory.h checkin.h maindirectory.h addpatient.h removepatient.h searchpatient.h fordatabase.h consultprescript.h prescription.h listconsults.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp searchinventory.cpp removeinventory.cpp addinventory.cpp checkin.cpp maindirectory.cpp addpatient.cpp removepatient.cpp searchpatient.cpp consultprescript.cpp prescription.cpp listconsults.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.ui searchinventory.ui removeinventory.ui addinventory.ui checkin.ui maindirectory.ui addpatient.ui removepatient.ui searchpatient.ui consultprescript.ui prescription.ui listconsults.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -694,9 +703,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/russell/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /home/russell/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp moc_listconsults.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp moc_listconsults.cpp
 moc_mainwindow.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -3377,11 +3386,118 @@ moc_prescription.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		/home/russell/Qt/5.8/gcc_64/bin/moc
 	/home/russell/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++ -I'/media/russell/Foundation/CPSC 362/real/SimpleSerums_radical_redo' -I/home/russell/Qt/5.8/gcc_64/include -I/home/russell/Qt/5.8/gcc_64/include/QtWidgets -I/home/russell/Qt/5.8/gcc_64/include/QtGui -I/home/russell/Qt/5.8/gcc_64/include/QtSql -I/home/russell/Qt/5.8/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include prescription.h -o moc_prescription.cpp
 
+moc_listconsults.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcore-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsysinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlogging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qflags.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypetraits.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmutex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnumeric.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversiontagging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtgui-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnamespace.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstring.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qchar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrefcount.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qalgorithms.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpair.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregexp.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetatype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmargins.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrect.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsize.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpoint.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpalette.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcolor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgb.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgba64.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qbrush.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qmatrix.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpolygon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qregion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatastream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiodevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtransform.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpainterpath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qimage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixelformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qshareddata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfont.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qkeysequence.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariant.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdebug.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlocale.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qset.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		listconsults.h \
+		moc_predefs.h \
+		/home/russell/Qt/5.8/gcc_64/bin/moc
+	/home/russell/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++ -I'/media/russell/Foundation/CPSC 362/real/SimpleSerums_radical_redo' -I/home/russell/Qt/5.8/gcc_64/include -I/home/russell/Qt/5.8/gcc_64/include/QtWidgets -I/home/russell/Qt/5.8/gcc_64/include/QtGui -I/home/russell/Qt/5.8/gcc_64/include/QtSql -I/home/russell/Qt/5.8/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include listconsults.h -o moc_listconsults.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h
+compiler_uic_make_all: ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_listconsults.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h
+	-$(DEL_FILE) ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_listconsults.h
 ui_mainwindow.h: mainwindow.ui \
 		/home/russell/Qt/5.8/gcc_64/bin/uic
 	/home/russell/Qt/5.8/gcc_64/bin/uic mainwindow.ui -o ui_mainwindow.h
@@ -3425,6 +3541,10 @@ ui_consultprescript.h: consultprescript.ui \
 ui_prescription.h: prescription.ui \
 		/home/russell/Qt/5.8/gcc_64/bin/uic
 	/home/russell/Qt/5.8/gcc_64/bin/uic prescription.ui -o ui_prescription.h
+
+ui_listconsults.h: listconsults.ui \
+		/home/russell/Qt/5.8/gcc_64/bin/uic
+	/home/russell/Qt/5.8/gcc_64/bin/uic listconsults.ui -o ui_listconsults.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -4859,6 +4979,11 @@ addinventory.o: addinventory.cpp addinventory.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
@@ -6432,6 +6557,42 @@ consultprescript.o: consultprescript.cpp consultprescript.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
 		prescription.h \
 		ui_consultprescript.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDate \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QAction \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QApplication \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QCheckBox \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qcheckbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDateTimeEdit \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdatetimeedit.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLabel \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QTextEdit \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextdocument.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpen.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o consultprescript.o consultprescript.cpp
@@ -6688,9 +6849,144 @@ prescription.o: prescription.cpp prescription.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlresult.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
 		ui_prescription.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QAction \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QApplication \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialogButtonBox \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLabel \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpen.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o prescription.o prescription.cpp
+
+listconsults.o: listconsults.cpp listconsults.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcore-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsysinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlogging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qflags.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypetraits.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmutex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnumeric.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversiontagging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtgui-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnamespace.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstring.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qchar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrefcount.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qalgorithms.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpair.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregexp.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetatype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmargins.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrect.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsize.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpoint.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpalette.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcolor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgb.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgba64.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qbrush.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qmatrix.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpolygon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qregion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatastream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiodevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtransform.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpainterpath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qimage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixelformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qshareddata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfont.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qkeysequence.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariant.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdebug.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlocale.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qset.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		ui_listconsults.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listconsults.o listconsults.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
@@ -6724,6 +7020,9 @@ moc_consultprescript.o: moc_consultprescript.cpp
 
 moc_prescription.o: moc_prescription.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_prescription.o moc_prescription.cpp
+
+moc_listconsults.o: moc_listconsults.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_listconsults.o moc_listconsults.cpp
 
 ####### Install
 
