@@ -17,7 +17,6 @@ MainDirectory::MainDirectory(QWidget *parent) :
     //standard
     connect(ui->listWidget, SIGNAL(itemClicked(QListWidgetItem*)),
             this, SLOT(listItemClicked(QListWidgetItem*)));
-
 }
 
 MainDirectory::~MainDirectory()
@@ -191,4 +190,10 @@ void MainDirectory::on_listWidget_2_itemClicked(QListWidgetItem *item)
     _consultPrescript->show();
     _consultPrescript->ssn = v.value<QString>();
     item->setHidden(true);
+}
+
+void MainDirectory::on_pushButton_10_clicked()
+{
+    editpatient *ed = new editpatient(this);
+    ed->show();
 }

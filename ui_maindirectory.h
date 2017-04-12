@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maindirectory.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -37,6 +37,7 @@ public:
     QVBoxLayout *verticalLayout_2;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
+    QPushButton *pushButton_10;
     QPushButton *pushButton_4;
     QPushButton *pushButton_7;
     QLineEdit *lineEdit_2;
@@ -91,6 +92,11 @@ public:
 
         verticalLayout_2->addWidget(pushButton_6);
 
+        pushButton_10 = new QPushButton(verticalLayoutWidget_2);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+
+        verticalLayout_2->addWidget(pushButton_10);
+
         pushButton_4 = new QPushButton(verticalLayoutWidget_2);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
 
@@ -138,20 +144,21 @@ public:
 
     void retranslateUi(QDialog *MainDirectory)
     {
-        MainDirectory->setWindowTitle(QApplication::translate("MainDirectory", "Dialog", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("MainDirectory", "search inventory", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainDirectory", "add stock", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainDirectory", "remove stock", Q_NULLPTR));
-        pushButton_5->setText(QApplication::translate("MainDirectory", "search patient", Q_NULLPTR));
-        pushButton_6->setText(QApplication::translate("MainDirectory", "add patient", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("MainDirectory", "remove patient", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("MainDirectory", "check in", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("MainDirectory", "Cancel", Q_NULLPTR));
-        label_2->setText(QApplication::translate("MainDirectory", "Enter Patient SSN", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("MainDirectory", "Queue", Q_NULLPTR));
-        checkBox->setText(QApplication::translate("MainDirectory", "Emergency", Q_NULLPTR));
-        label->setText(QApplication::translate("MainDirectory", "Standard", Q_NULLPTR));
-        label_3->setText(QApplication::translate("MainDirectory", "Emergency", Q_NULLPTR));
+        MainDirectory->setWindowTitle(QApplication::translate("MainDirectory", "Dialog", 0));
+        pushButton_3->setText(QApplication::translate("MainDirectory", "search inventory", 0));
+        pushButton_2->setText(QApplication::translate("MainDirectory", "add stock", 0));
+        pushButton->setText(QApplication::translate("MainDirectory", "remove stock", 0));
+        pushButton_5->setText(QApplication::translate("MainDirectory", "search patient", 0));
+        pushButton_6->setText(QApplication::translate("MainDirectory", "add patient", 0));
+        pushButton_10->setText(QApplication::translate("MainDirectory", "edit patient", 0));
+        pushButton_4->setText(QApplication::translate("MainDirectory", "remove patient", 0));
+        pushButton_7->setText(QApplication::translate("MainDirectory", "check in", 0));
+        pushButton_8->setText(QApplication::translate("MainDirectory", "Cancel", 0));
+        label_2->setText(QApplication::translate("MainDirectory", "Enter Patient SSN", 0));
+        pushButton_9->setText(QApplication::translate("MainDirectory", "Queue", 0));
+        checkBox->setText(QApplication::translate("MainDirectory", "Emergency", 0));
+        label->setText(QApplication::translate("MainDirectory", "Standard", 0));
+        label_3->setText(QApplication::translate("MainDirectory", "Emergency", 0));
     } // retranslateUi
 
 };

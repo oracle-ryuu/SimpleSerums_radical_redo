@@ -10,6 +10,8 @@
 #include "searchinventory.h"
 #include "removepatient.h"
 #include "searchpatient.h"
+#include "editpatient.h"
+#include "editpatient2.h"
 
 namespace Ui {
 class MainDirectory;
@@ -48,6 +50,8 @@ private slots:
 
 
     void on_listWidget_2_itemClicked(QListWidgetItem *item);
+
+    void on_pushButton_10_clicked();
 
 private:
     Ui::MainDirectory *ui;
