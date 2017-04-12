@@ -23,15 +23,6 @@ void addPatient::on_pushButton_2_clicked()
     QString pat_Name=ui->pat_Name->text();
     QString DOB=ui->DOB->text();
     QString Address =ui->Address->text();
-    Address += ", ";
-    QString City =ui->City->text();
-    Address += City;
-    Address += ", ";
-    QString State =ui->State->text();
-    Address += State;
-    Address += ", ";
-    QString Zip =ui->Zip->text();
-    Address += Zip;
     QString SEX=ui->Sex->text();
     QString pat_Phone=ui->pat_Phone->text();
     QString ins_Name=ui->ins_Name->text();

@@ -36,7 +36,8 @@ SOURCES += main.cpp\
     consultprescript.cpp \
     prescription.cpp \
     editpatient.cpp \
-    editpatient2.cpp
+    editpatient2.cpp \
+    listconsults.cpp
 
 HEADERS  += mainwindow.h \
     searchinventory.h \
@@ -51,7 +52,8 @@ HEADERS  += mainwindow.h \
     consultprescript.h \
     prescription.h \
     editpatient.h \
-    editpatient2.h
+    editpatient2.h \
+    listconsults.h
 
 FORMS    += mainwindow.ui \
     searchinventory.ui \

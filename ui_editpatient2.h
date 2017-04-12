@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'editpatient2.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -36,9 +36,6 @@ public:
     QLabel *label_14;
     QLabel *label_15;
     QLabel *label_16;
-    QLabel *label_17;
-    QLabel *label_18;
-    QLabel *label_19;
     QLabel *label_20;
     QLabel *label_21;
     QLabel *label_22;
@@ -49,9 +46,6 @@ public:
     QLineEdit *pat_Name_2;
     QLineEdit *DOB_2;
     QLineEdit *Address_2;
-    QLineEdit *City_2;
-    QLineEdit *State_2;
-    QLineEdit *Zip_2;
     QLineEdit *Sex_2;
     QLineEdit *pat_Phone_2;
     QLineEdit *ins_Name_2;
@@ -100,21 +94,6 @@ public:
 
         verticalLayout_3->addWidget(label_16);
 
-        label_17 = new QLabel(verticalLayoutWidget_2);
-        label_17->setObjectName(QStringLiteral("label_17"));
-
-        verticalLayout_3->addWidget(label_17);
-
-        label_18 = new QLabel(verticalLayoutWidget_2);
-        label_18->setObjectName(QStringLiteral("label_18"));
-
-        verticalLayout_3->addWidget(label_18);
-
-        label_19 = new QLabel(verticalLayoutWidget_2);
-        label_19->setObjectName(QStringLiteral("label_19"));
-
-        verticalLayout_3->addWidget(label_19);
-
         label_20 = new QLabel(verticalLayoutWidget_2);
         label_20->setObjectName(QStringLiteral("label_20"));
 
@@ -161,21 +140,6 @@ public:
 
         verticalLayout_4->addWidget(Address_2);
 
-        City_2 = new QLineEdit(verticalLayoutWidget);
-        City_2->setObjectName(QStringLiteral("City_2"));
-
-        verticalLayout_4->addWidget(City_2);
-
-        State_2 = new QLineEdit(verticalLayoutWidget);
-        State_2->setObjectName(QStringLiteral("State_2"));
-
-        verticalLayout_4->addWidget(State_2);
-
-        Zip_2 = new QLineEdit(verticalLayoutWidget);
-        Zip_2->setObjectName(QStringLiteral("Zip_2"));
-
-        verticalLayout_4->addWidget(Zip_2);
-
         Sex_2 = new QLineEdit(verticalLayoutWidget);
         Sex_2->setObjectName(QStringLiteral("Sex_2"));
 
@@ -209,20 +173,17 @@ public:
 
     void retranslateUi(QDialog *editpatient2)
     {
-        editpatient2->setWindowTitle(QApplication::translate("editpatient2", "Dialog", 0));
-        pushButton_3->setText(QApplication::translate("editpatient2", "ok", 0));
-        pushButton_4->setText(QApplication::translate("editpatient2", "cancel", 0));
-        label_14->setText(QApplication::translate("editpatient2", "Name", 0));
-        label_15->setText(QApplication::translate("editpatient2", "Date of birth (yyyy-mm-dd)", 0));
-        label_16->setText(QApplication::translate("editpatient2", "Street address", 0));
-        label_17->setText(QApplication::translate("editpatient2", "City", 0));
-        label_18->setText(QApplication::translate("editpatient2", "State", 0));
-        label_19->setText(QApplication::translate("editpatient2", "Zip code", 0));
-        label_20->setText(QApplication::translate("editpatient2", "Sex", 0));
-        label_21->setText(QApplication::translate("editpatient2", "Phone", 0));
-        label_22->setText(QApplication::translate("editpatient2", "Insurance Comp", 0));
-        label_23->setText(QApplication::translate("editpatient2", "Customer Number", 0));
-        label_24->setText(QApplication::translate("editpatient2", "Doctor ID", 0));
+        editpatient2->setWindowTitle(QApplication::translate("editpatient2", "Dialog", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("editpatient2", "ok", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("editpatient2", "cancel", Q_NULLPTR));
+        label_14->setText(QApplication::translate("editpatient2", "Name", Q_NULLPTR));
+        label_15->setText(QApplication::translate("editpatient2", "Date of birth (yyyy-mm-dd)", Q_NULLPTR));
+        label_16->setText(QApplication::translate("editpatient2", "Address", Q_NULLPTR));
+        label_20->setText(QApplication::translate("editpatient2", "Sex", Q_NULLPTR));
+        label_21->setText(QApplication::translate("editpatient2", "Phone", Q_NULLPTR));
+        label_22->setText(QApplication::translate("editpatient2", "Insurance Comp", Q_NULLPTR));
+        label_23->setText(QApplication::translate("editpatient2", "Customer Number", Q_NULLPTR));
+        label_24->setText(QApplication::translate("editpatient2", "Doctor ID", Q_NULLPTR));
         pat_Phone_2->setText(QString());
     } // retranslateUi
 

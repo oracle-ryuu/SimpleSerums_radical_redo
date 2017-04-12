@@ -40,6 +40,7 @@ void editpatient::on_pushButton_2_clicked()
 
             db.connClose();
             editpatient2 *edit = new editpatient2(this, ID);
+            edit->ID = ID;
             edit->show();
         }
         else{

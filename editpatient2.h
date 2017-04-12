@@ -20,6 +20,7 @@ public:
 
     ~editpatient2();
     dataffff db;
+    QString ID;
 
 private slots:
     void on_pushButton_3_clicked();

@@ -33,9 +33,6 @@ public:
     QLabel *label_3;
     QLabel *label_6;
     QLabel *label_9;
-    QLabel *label_12;
-    QLabel *label_11;
-    QLabel *label_10;
     QLabel *label_8;
     QLabel *label_7;
     QLabel *label_5;
@@ -47,9 +44,6 @@ public:
     QLineEdit *pat_Name;
     QLineEdit *DOB;
     QLineEdit *Address;
-    QLineEdit *City;
-    QLineEdit *State;
-    QLineEdit *Zip;
     QLineEdit *Sex;
     QLineEdit *pat_Phone;
     QLineEdit *ins_Name;
@@ -90,21 +84,6 @@ public:
         label_9->setObjectName(QStringLiteral("label_9"));
 
         verticalLayout_2->addWidget(label_9);
-
-        label_12 = new QLabel(verticalLayoutWidget_2);
-        label_12->setObjectName(QStringLiteral("label_12"));
-
-        verticalLayout_2->addWidget(label_12);
-
-        label_11 = new QLabel(verticalLayoutWidget_2);
-        label_11->setObjectName(QStringLiteral("label_11"));
-
-        verticalLayout_2->addWidget(label_11);
-
-        label_10 = new QLabel(verticalLayoutWidget_2);
-        label_10->setObjectName(QStringLiteral("label_10"));
-
-        verticalLayout_2->addWidget(label_10);
 
         label_8 = new QLabel(verticalLayoutWidget_2);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -156,21 +135,6 @@ public:
         Address->setObjectName(QStringLiteral("Address"));
 
         verticalLayout->addWidget(Address);
-
-        City = new QLineEdit(verticalLayoutWidget);
-        City->setObjectName(QStringLiteral("City"));
-
-        verticalLayout->addWidget(City);
-
-        State = new QLineEdit(verticalLayoutWidget);
-        State->setObjectName(QStringLiteral("State"));
-
-        verticalLayout->addWidget(State);
-
-        Zip = new QLineEdit(verticalLayoutWidget);
-        Zip->setObjectName(QStringLiteral("Zip"));
-
-        verticalLayout->addWidget(Zip);
 
         Sex = new QLineEdit(verticalLayoutWidget);
         Sex->setObjectName(QStringLiteral("Sex"));
@@ -225,10 +189,7 @@ public:
         label_4->setText(QApplication::translate("addPatient", "Social Security", Q_NULLPTR));
         label_3->setText(QApplication::translate("addPatient", "Name", Q_NULLPTR));
         label_6->setText(QApplication::translate("addPatient", "Date of birth (yyyy-mm-dd)", Q_NULLPTR));
-        label_9->setText(QApplication::translate("addPatient", "Street address", Q_NULLPTR));
-        label_12->setText(QApplication::translate("addPatient", "City", Q_NULLPTR));
-        label_11->setText(QApplication::translate("addPatient", "State", Q_NULLPTR));
-        label_10->setText(QApplication::translate("addPatient", "Zip code", Q_NULLPTR));
+        label_9->setText(QApplication::translate("addPatient", "Address", Q_NULLPTR));
         label_8->setText(QApplication::translate("addPatient", "Sex", Q_NULLPTR));
         label_7->setText(QApplication::translate("addPatient", "Phone", Q_NULLPTR));
         label_5->setText(QApplication::translate("addPatient", "Insurance Comp", Q_NULLPTR));

@@ -21,7 +21,7 @@ public:
     bool connOpen(){
         mydb = QSqlDatabase::addDatabase("QSQLITE");
     // Need to put your path to the database here, need to figure out if there is a default path...
-        mydb.setDatabaseName("/home/rosin40/Documents/the_database.db");
+        mydb.setDatabaseName("/media/russell/Foundation/CPSC 362/testArea/Sqlite_DB/the_database.db");
 
         if (!mydb.open()){
             qDebug()<<("Connection to database failed...");

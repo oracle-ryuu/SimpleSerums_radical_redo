@@ -60,6 +60,8 @@ SOURCES       = main.cpp \
 		searchpatient.cpp \
 		consultprescript.cpp \
 		prescription.cpp \
+		editpatient.cpp \
+		editpatient2.cpp \
 		listconsults.cpp moc_mainwindow.cpp \
 		moc_searchinventory.cpp \
 		moc_removeinventory.cpp \
@@ -71,6 +73,8 @@ SOURCES       = main.cpp \
 		moc_searchpatient.cpp \
 		moc_consultprescript.cpp \
 		moc_prescription.cpp \
+		moc_editpatient.cpp \
+		moc_editpatient2.cpp \
 		moc_listconsults.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
@@ -84,6 +88,8 @@ OBJECTS       = main.o \
 		searchpatient.o \
 		consultprescript.o \
 		prescription.o \
+		editpatient.o \
+		editpatient2.o \
 		listconsults.o \
 		moc_mainwindow.o \
 		moc_searchinventory.o \
@@ -96,6 +102,8 @@ OBJECTS       = main.o \
 		moc_searchpatient.o \
 		moc_consultprescript.o \
 		moc_prescription.o \
+		moc_editpatient.o \
+		moc_editpatient2.o \
 		moc_listconsults.o
 DIST          = /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/russell/Qt/5.8/gcc_64/mkspecs/common/unix.conf \
@@ -279,6 +287,8 @@ DIST          = /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		fordatabase.h \
 		consultprescript.h \
 		prescription.h \
+		editpatient.h \
+		editpatient2.h \
 		listconsults.h main.cpp \
 		mainwindow.cpp \
 		searchinventory.cpp \
@@ -291,6 +301,8 @@ DIST          = /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		searchpatient.cpp \
 		consultprescript.cpp \
 		prescription.cpp \
+		editpatient.cpp \
+		editpatient2.cpp \
 		listconsults.cpp
 QMAKE_TARGET  = SimpleSerum
 DESTDIR       = 
@@ -300,7 +312,7 @@ TARGET        = SimpleSerum
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_listconsults.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: SimpleSerum.pro /home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
@@ -669,9 +681,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/russell/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h searchinventory.h removeinventory.h addinventory.h checkin.h maindirectory.h addpatient.h removepatient.h searchpatient.h fordatabase.h consultprescript.h prescription.h listconsults.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp searchinventory.cpp removeinventory.cpp addinventory.cpp checkin.cpp maindirectory.cpp addpatient.cpp removepatient.cpp searchpatient.cpp consultprescript.cpp prescription.cpp listconsults.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.ui searchinventory.ui removeinventory.ui addinventory.ui checkin.ui maindirectory.ui addpatient.ui removepatient.ui searchpatient.ui consultprescript.ui prescription.ui listconsults.ui $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h searchinventory.h removeinventory.h addinventory.h checkin.h maindirectory.h addpatient.h removepatient.h searchpatient.h fordatabase.h consultprescript.h prescription.h editpatient.h editpatient2.h listconsults.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp searchinventory.cpp removeinventory.cpp addinventory.cpp checkin.cpp maindirectory.cpp addpatient.cpp removepatient.cpp searchpatient.cpp consultprescript.cpp prescription.cpp editpatient.cpp editpatient2.cpp listconsults.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.ui searchinventory.ui removeinventory.ui addinventory.ui checkin.ui maindirectory.ui addpatient.ui removepatient.ui searchpatient.ui consultprescript.ui prescription.ui editpatient.ui editpatient2.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -703,9 +715,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/russell/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /home/russell/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp moc_listconsults.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp moc_editpatient.cpp moc_editpatient2.cpp moc_listconsults.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp moc_listconsults.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_searchinventory.cpp moc_removeinventory.cpp moc_addinventory.cpp moc_checkin.cpp moc_maindirectory.cpp moc_addpatient.cpp moc_removepatient.cpp moc_searchpatient.cpp moc_consultprescript.cpp moc_prescription.cpp moc_editpatient.cpp moc_editpatient2.cpp moc_listconsults.cpp
 moc_mainwindow.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -968,6 +980,10 @@ moc_mainwindow.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
 		searchinventory.h \
 		removepatient.h \
 		searchpatient.h \
+		listconsults.h \
+		editpatient.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		editpatient2.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QFileInfo \
 		mainwindow.h \
 		moc_predefs.h \
@@ -2105,6 +2121,10 @@ moc_maindirectory.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QListWidget
 		searchinventory.h \
 		removepatient.h \
 		searchpatient.h \
+		listconsults.h \
+		editpatient.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		editpatient2.h \
 		maindirectory.h \
 		moc_predefs.h \
 		/home/russell/Qt/5.8/gcc_64/bin/moc
@@ -2870,6 +2890,9 @@ moc_searchpatient.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
 		fordatabase.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
+		listconsults.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QListWidgetItem \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistwidget.h \
 		searchpatient.h \
 		moc_predefs.h \
 		/home/russell/Qt/5.8/gcc_64/bin/moc
@@ -3386,7 +3409,7 @@ moc_prescription.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		/home/russell/Qt/5.8/gcc_64/bin/moc
 	/home/russell/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++ -I'/media/russell/Foundation/CPSC 362/real/SimpleSerums_radical_redo' -I/home/russell/Qt/5.8/gcc_64/include -I/home/russell/Qt/5.8/gcc_64/include/QtWidgets -I/home/russell/Qt/5.8/gcc_64/include/QtGui -I/home/russell/Qt/5.8/gcc_64/include/QtSql -I/home/russell/Qt/5.8/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include prescription.h -o moc_prescription.cpp
 
-moc_listconsults.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
+moc_editpatient.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
@@ -3488,6 +3511,669 @@ moc_listconsults.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSql \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSqlDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCore \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracttransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydataops.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasictimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbitarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbuffer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcollator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdiriterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qendian.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventtransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qexception.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileselector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QObject \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QStringList \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfinalstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuture.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrunnable.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresultstore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibrary.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversionnumber.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlinkedlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlockfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetaobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimetype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpluginloader.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocess.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qqueue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresource.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsettings.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignaltransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstack.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstatemachine.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QScopedPointer \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthread.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadpool.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimeline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimezone.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtranslator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/quuid.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qxmlstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlfield.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlindex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qicon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlresult.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
+		fordatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		editpatient2.h \
+		editpatient.h \
+		moc_predefs.h \
+		/home/russell/Qt/5.8/gcc_64/bin/moc
+	/home/russell/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++ -I'/media/russell/Foundation/CPSC 362/real/SimpleSerums_radical_redo' -I/home/russell/Qt/5.8/gcc_64/include -I/home/russell/Qt/5.8/gcc_64/include/QtWidgets -I/home/russell/Qt/5.8/gcc_64/include/QtGui -I/home/russell/Qt/5.8/gcc_64/include/QtSql -I/home/russell/Qt/5.8/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include editpatient.h -o moc_editpatient.cpp
+
+moc_editpatient2.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcore-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsysinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlogging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qflags.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypetraits.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmutex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnumeric.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversiontagging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtgui-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnamespace.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstring.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qchar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrefcount.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qalgorithms.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpair.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregexp.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetatype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmargins.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrect.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsize.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpoint.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpalette.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcolor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgb.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgba64.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qbrush.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qmatrix.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpolygon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qregion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatastream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiodevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtransform.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpainterpath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qimage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixelformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qshareddata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfont.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qkeysequence.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariant.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdebug.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlocale.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qset.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSql \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSqlDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCore \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracttransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydataops.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasictimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbitarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbuffer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcollator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdiriterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qendian.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventtransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qexception.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileselector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QObject \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QStringList \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfinalstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuture.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrunnable.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresultstore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibrary.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversionnumber.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlinkedlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlockfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetaobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimetype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpluginloader.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocess.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qqueue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresource.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsettings.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignaltransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstack.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstatemachine.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QScopedPointer \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthread.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadpool.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimeline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimezone.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtranslator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/quuid.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qxmlstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlfield.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlindex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qicon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlresult.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
+		fordatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
+		editpatient2.h \
+		moc_predefs.h \
+		/home/russell/Qt/5.8/gcc_64/bin/moc
+	/home/russell/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++ -I'/media/russell/Foundation/CPSC 362/real/SimpleSerums_radical_redo' -I/home/russell/Qt/5.8/gcc_64/include -I/home/russell/Qt/5.8/gcc_64/include/QtWidgets -I/home/russell/Qt/5.8/gcc_64/include/QtGui -I/home/russell/Qt/5.8/gcc_64/include/QtSql -I/home/russell/Qt/5.8/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include editpatient2.h -o moc_editpatient2.cpp
+
+moc_listconsults.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QListWidgetItem \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcore-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsysinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlogging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qflags.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypetraits.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmutex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnumeric.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversiontagging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtgui-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnamespace.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstring.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qchar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrefcount.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qalgorithms.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpair.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregexp.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetatype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmargins.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrect.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsize.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpoint.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpalette.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcolor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgb.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgba64.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qbrush.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qmatrix.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpolygon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qregion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatastream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiodevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtransform.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpainterpath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qimage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixelformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qshareddata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfont.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qkeysequence.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariant.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdebug.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlocale.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qset.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qicon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSql \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSqlDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCore \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracttransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydataops.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasictimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbitarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbuffer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcollator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdiriterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qendian.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventtransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qexception.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileselector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QObject \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QStringList \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfinalstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuture.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrunnable.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresultstore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibrary.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversionnumber.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlinkedlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlockfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetaobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimetype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpluginloader.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocess.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qqueue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresource.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsettings.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignaltransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstack.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstatemachine.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QScopedPointer \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthread.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadpool.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimeline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimezone.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtranslator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/quuid.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qxmlstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlfield.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlindex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlresult.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
+		fordatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
 		listconsults.h \
 		moc_predefs.h \
 		/home/russell/Qt/5.8/gcc_64/bin/moc
@@ -3495,9 +4181,9 @@ moc_listconsults.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_listconsults.h
+compiler_uic_make_all: ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_listconsults.h
+	-$(DEL_FILE) ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h
 ui_mainwindow.h: mainwindow.ui \
 		/home/russell/Qt/5.8/gcc_64/bin/uic
 	/home/russell/Qt/5.8/gcc_64/bin/uic mainwindow.ui -o ui_mainwindow.h
@@ -3542,9 +4228,13 @@ ui_prescription.h: prescription.ui \
 		/home/russell/Qt/5.8/gcc_64/bin/uic
 	/home/russell/Qt/5.8/gcc_64/bin/uic prescription.ui -o ui_prescription.h
 
-ui_listconsults.h: listconsults.ui \
+ui_editpatient.h: editpatient.ui \
 		/home/russell/Qt/5.8/gcc_64/bin/uic
-	/home/russell/Qt/5.8/gcc_64/bin/uic listconsults.ui -o ui_listconsults.h
+	/home/russell/Qt/5.8/gcc_64/bin/uic editpatient.ui -o ui_editpatient.h
+
+ui_editpatient2.h: editpatient2.ui \
+		/home/russell/Qt/5.8/gcc_64/bin/uic
+	/home/russell/Qt/5.8/gcc_64/bin/uic editpatient2.ui -o ui_editpatient2.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -3819,6 +4509,10 @@ main.o: main.cpp mainwindow.h \
 		searchinventory.h \
 		removepatient.h \
 		searchpatient.h \
+		listconsults.h \
+		editpatient.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		editpatient2.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QFileInfo \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QApplication \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
@@ -4090,6 +4784,10 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		searchinventory.h \
 		removepatient.h \
 		searchpatient.h \
+		listconsults.h \
+		editpatient.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		editpatient2.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QFileInfo \
 		ui_mainwindow.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
@@ -4131,8 +4829,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
-		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 searchinventory.o: searchinventory.cpp searchinventory.h \
@@ -5400,6 +6097,10 @@ maindirectory.o: maindirectory.cpp maindirectory.h \
 		searchinventory.h \
 		removepatient.h \
 		searchpatient.h \
+		listconsults.h \
+		editpatient.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		editpatient2.h \
 		ui_maindirectory.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QAction \
@@ -6267,6 +6968,9 @@ searchpatient.o: searchpatient.cpp searchpatient.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
 		fordatabase.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
+		listconsults.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QListWidgetItem \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistwidget.h \
 		ui_searchpatient.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QAction \
@@ -6882,7 +7586,7 @@ prescription.o: prescription.cpp prescription.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o prescription.o prescription.cpp
 
-listconsults.o: listconsults.cpp listconsults.h \
+editpatient.o: editpatient.cpp editpatient.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -6985,7 +7689,765 @@ listconsults.o: listconsults.cpp listconsults.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
 		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_listconsults.h
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSql \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSqlDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCore \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracttransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydataops.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasictimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbitarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbuffer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcollator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdiriterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qendian.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventtransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qexception.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileselector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QObject \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QStringList \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfinalstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuture.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrunnable.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresultstore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibrary.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversionnumber.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlinkedlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlockfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetaobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimetype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpluginloader.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocess.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qqueue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresource.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsettings.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignaltransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstack.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstatemachine.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QScopedPointer \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthread.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadpool.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimeline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimezone.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtranslator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/quuid.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qxmlstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlfield.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlindex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qicon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlresult.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
+		fordatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		editpatient2.h \
+		ui_editpatient.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QAction \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QApplication \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLabel \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpen.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
+		ui_editpatient2.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editpatient.o editpatient.cpp
+
+editpatient2.o: editpatient2.cpp editpatient2.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcore-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsysinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlogging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qflags.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypetraits.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmutex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnumeric.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversiontagging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtgui-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnamespace.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstring.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qchar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrefcount.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qalgorithms.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpair.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregexp.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetatype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmargins.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrect.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsize.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpoint.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpalette.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcolor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgb.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgba64.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qbrush.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qmatrix.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpolygon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qregion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatastream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiodevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtransform.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpainterpath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qimage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixelformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qshareddata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfont.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qkeysequence.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariant.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdebug.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlocale.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qset.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QString \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSql \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSqlDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCore \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracttransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydataops.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasictimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbitarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbuffer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcollator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdiriterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qendian.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventtransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qexception.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileselector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QObject \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QStringList \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfinalstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuture.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrunnable.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresultstore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibrary.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversionnumber.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlinkedlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlockfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetaobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimetype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpluginloader.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocess.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qqueue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresource.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsettings.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignaltransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstack.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstatemachine.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QScopedPointer \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthread.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadpool.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimeline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimezone.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtranslator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/quuid.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qxmlstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlfield.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlindex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qicon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlresult.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
+		fordatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
+		editpatient.h \
+		ui_editpatient2.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QAction \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QApplication \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLabel \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpen.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtextoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QRegExp \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editpatient2.o editpatient2.cpp
+
+listconsults.o: listconsults.cpp listconsults.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QListWidgetItem \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qconfig.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcore-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsysinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlogging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qflags.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtypetraits.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmutex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnumeric.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversiontagging.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtgui-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qnamespace.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstring.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qchar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrefcount.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qalgorithms.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpair.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregexp.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetatype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobject_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmargins.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrect.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsize.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpoint.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpalette.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcolor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgb.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qrgba64.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qbrush.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qmatrix.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpolygon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qregion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatastream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qiodevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtransform.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpainterpath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qimage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixelformat.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qpixmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qshareddata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfont.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qfontinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qcursor.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qkeysequence.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qevent.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariant.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmap.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdebug.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlocale.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qset.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurl.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qurlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qicon.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QDialog \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSql \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/QtSqlDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCore \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qabstracttransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydataops.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbasictimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbitarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbuffer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcache.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcollator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qdiriterator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qendian.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qeventtransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qexception.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfileselector.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QObject \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QStringList \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfinalstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuture.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qrunnable.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresultstore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibrary.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qversionnumber.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlinkedlist.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qlockfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmath.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmetaobject.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedata.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qmimetype.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpluginloader.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qprocess.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qqueue.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qresource.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsettings.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsignaltransition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstack.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstatemachine.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QScopedPointer \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthread.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadpool.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimeline.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimer.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtimezone.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtranslator.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/quuid.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qxmlstream.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlfield.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlindex.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qsqlresult.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtSql/qtsqlversion.h \
+		fordatabase.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QDebug \
+		ui_listconsults.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtCore/QVariant \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QAction \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QApplication \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QLabel \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QListWidget \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QWidget \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		/home/russell/Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listconsults.o listconsults.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
@@ -7020,6 +8482,12 @@ moc_consultprescript.o: moc_consultprescript.cpp
 
 moc_prescription.o: moc_prescription.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_prescription.o moc_prescription.cpp
+
+moc_editpatient.o: moc_editpatient.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_editpatient.o moc_editpatient.cpp
+
+moc_editpatient2.o: moc_editpatient2.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_editpatient2.o moc_editpatient2.cpp
 
 moc_listconsults.o: moc_listconsults.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_listconsults.o moc_listconsults.cpp

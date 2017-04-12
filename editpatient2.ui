@@ -66,28 +66,7 @@
     <item>
      <widget class="QLabel" name="label_16">
       <property name="text">
-       <string>Street address</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_17">
-      <property name="text">
-       <string>City</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_18">
-      <property name="text">
-       <string>State</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_19">
-      <property name="text">
-       <string>Zip code</string>
+       <string>Address</string>
       </property>
      </widget>
     </item>
@@ -146,15 +125,6 @@
     </item>
     <item>
      <widget class="QLineEdit" name="Address_2"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="City_2"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="State_2"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="Zip_2"/>
     </item>
     <item>
      <widget class="QLineEdit" name="Sex_2"/>
