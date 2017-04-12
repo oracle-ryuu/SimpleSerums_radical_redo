@@ -312,7 +312,7 @@ TARGET        = SimpleSerum
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h ui_listconsults.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: SimpleSerum.pro /home/russell/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf /home/russell/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
@@ -683,7 +683,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents /home/russell/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.h searchinventory.h removeinventory.h addinventory.h checkin.h maindirectory.h addpatient.h removepatient.h searchpatient.h fordatabase.h consultprescript.h prescription.h editpatient.h editpatient2.h listconsults.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp mainwindow.cpp searchinventory.cpp removeinventory.cpp addinventory.cpp checkin.cpp maindirectory.cpp addpatient.cpp removepatient.cpp searchpatient.cpp consultprescript.cpp prescription.cpp editpatient.cpp editpatient2.cpp listconsults.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.ui searchinventory.ui removeinventory.ui addinventory.ui checkin.ui maindirectory.ui addpatient.ui removepatient.ui searchpatient.ui consultprescript.ui prescription.ui editpatient.ui editpatient2.ui $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.ui searchinventory.ui removeinventory.ui addinventory.ui checkin.ui maindirectory.ui addpatient.ui removepatient.ui searchpatient.ui consultprescript.ui prescription.ui editpatient.ui editpatient2.ui listconsults.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -4181,9 +4181,9 @@ moc_listconsults.cpp: /home/russell/Qt/5.8/gcc_64/include/QtWidgets/QListWidgetI
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h
+compiler_uic_make_all: ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h ui_listconsults.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h
+	-$(DEL_FILE) ui_mainwindow.h ui_searchinventory.h ui_removeinventory.h ui_addinventory.h ui_checkin.h ui_maindirectory.h ui_addpatient.h ui_removepatient.h ui_searchpatient.h ui_consultprescript.h ui_prescription.h ui_editpatient.h ui_editpatient2.h ui_listconsults.h
 ui_mainwindow.h: mainwindow.ui \
 		/home/russell/Qt/5.8/gcc_64/bin/uic
 	/home/russell/Qt/5.8/gcc_64/bin/uic mainwindow.ui -o ui_mainwindow.h
@@ -4235,6 +4235,10 @@ ui_editpatient.h: editpatient.ui \
 ui_editpatient2.h: editpatient2.ui \
 		/home/russell/Qt/5.8/gcc_64/bin/uic
 	/home/russell/Qt/5.8/gcc_64/bin/uic editpatient2.ui -o ui_editpatient2.h
+
+ui_listconsults.h: listconsults.ui \
+		/home/russell/Qt/5.8/gcc_64/bin/uic
+	/home/russell/Qt/5.8/gcc_64/bin/uic listconsults.ui -o ui_listconsults.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:

@@ -19,6 +19,7 @@ public:
     ~listconsults();
     dataffff db;
     QString ID;
+    QString name;
 
 private slots:
     void on_listWidget_itemClicked(QListWidgetItem *item);

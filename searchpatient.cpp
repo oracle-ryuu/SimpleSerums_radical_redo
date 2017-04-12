@@ -67,14 +67,17 @@ void searchpatient::on_pushButton_clicked()
 void searchpatient::on_pushButton_3_clicked()
 {
      QString ID = ui->ID->text();
+
      QSqlQuery qry;
-     qry.prepare("select c_appointment,c_description from CONSULT where c_patient=:ID ");
+     qry.prepare("select c_appointment,c_description,p_name from CONSULT,PATIENT where c_patient=:ID and p_ssn=:SSN ");
      qry.bindValue(":ID",ID);
+     qry.bindValue(":SSN",ID);
      if(qry.exec()){
          if(qry.next()){
             //QMessageBox::information(this,"info","Listing consults...");
             _listconsults = new listconsults(this);
             _listconsults->ID = ID;
+            _listconsults->name = qry.value(2).toString();
             _listconsults->show();
          }
          else{
@@ -85,4 +88,6 @@ void searchpatient::on_pushButton_3_clicked()
      else{
          QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
      }
+     //gets name
+
 }

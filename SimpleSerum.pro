@@ -67,6 +67,7 @@ FORMS    += mainwindow.ui \
     consultprescript.ui \
     prescription.ui \
     editpatient.ui \
-    editpatient2.ui
+    editpatient2.ui \
+    listconsults.ui
 
 DISTFILES +=

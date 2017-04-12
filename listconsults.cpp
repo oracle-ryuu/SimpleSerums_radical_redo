@@ -8,6 +8,7 @@ listconsults::listconsults(QWidget *parent) :
 {
     ui->setupUi(this);
     db.connOpen();
+    ui->label_2->setText(name);
 }
 
 listconsults::~listconsults()
@@ -23,6 +24,7 @@ void listconsults::on_listWidget_itemClicked(QListWidgetItem *item)
 
 void listconsults::on_pushButton_clicked()
 {
+    ui->label_2->setText(name);
     QSqlQuery qry;
     qry.prepare("select c_appointment,c_description from CONSULT where c_patient=:ID ");
     qry.bindValue(":ID",ID);
@@ -35,8 +37,10 @@ void listconsults::on_pushButton_clicked()
             thing->setData(Qt::UserRole, v);
             ui->listWidget->addItem(thing);
         }
+        ui->pushButton->hide();
     }
     else{
         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
     }
+
 }
