@@ -173,7 +173,7 @@ void MainDirectory::listItemClicked(QListWidgetItem* item)
 {
     //retrieve SSN from the name(item)
     QVariant v = item->data(Qt::UserRole);
-    QMessageBox::information(this, "SSN check", v.value<QString>());
+    //QMessageBox::information(this, "SSN check", v.value<QString>());
     consultPrescript* _consultPrescript = new consultPrescript(this);
     _consultPrescript->show();
     _consultPrescript->ssn = v.value<QString>();
@@ -185,7 +185,7 @@ void MainDirectory::listItemClicked(QListWidgetItem* item)
 void MainDirectory::on_listWidget_2_itemClicked(QListWidgetItem *item)
 {
     QVariant v = item->data(Qt::UserRole);
-    QMessageBox::information(this, "SSN check", v.value<QString>());
+    //QMessageBox::information(this, "SSN check", v.value<QString>());
     consultPrescript* _consultPrescript = new consultPrescript(this);
     _consultPrescript->show();
     _consultPrescript->ssn = v.value<QString>();
