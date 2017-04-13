@@ -38,6 +38,7 @@ void consultPrescript::on_pushButton_clicked()
             _prescription->appointment = ui->dateTimeEdit->text();
             this->hide();
         }
+        this->hide();
     }
     else{
         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
