@@ -31,6 +31,16 @@ void prescription::on_buttonBox_accepted()
     qry.bindValue(":amount",quantity);
     if(qry.exec()){
         QMessageBox::information(this,tr("Save"),tr("Prescription saved"));
+        QSqlQuery qry2;
+        qry2.prepare("update ITEM set i_count= i_count - :quantity where i_id= :id and i_count > 0");
+        qry2.bindValue(":quantity",quantity);
+        qry2.bindValue(":id",id);
+        if(qry2.exec()){
+            QMessageBox::information(this,tr("Update"),tr("Inventory updated!"));
+        }
+        else{
+            QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
+        }
         this->hide();
     }
     else{
