@@ -53,6 +53,8 @@ private slots:
 
     void on_pushButton_10_clicked();
 
+    void on_listWidget_3_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MainDirectory *ui;
      addInventory *_addinventory;

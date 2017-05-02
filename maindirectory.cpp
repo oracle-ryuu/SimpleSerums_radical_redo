@@ -174,9 +174,14 @@ void MainDirectory::listItemClicked(QListWidgetItem* item)
     //retrieve SSN from the name(item)
     QVariant v = item->data(Qt::UserRole);
     //QMessageBox::information(this, "SSN check", v.value<QString>());
-    consultPrescript* _consultPrescript = new consultPrescript(this);
-    _consultPrescript->show();
-    _consultPrescript->ssn = v.value<QString>();
+//    consultPrescript* _consultPrescript = new consultPrescript(this);
+//    _consultPrescript->show();
+//    _consultPrescript->ssn = v.value<QString>();
+    QListWidgetItem *name = new QListWidgetItem;
+    name->setText(item->data(0).toString());        //Set text of patient's name into name variable
+    name->setData(Qt::UserRole, v.value<QString>());//Set SSN data ino name variable
+    ui->listWidget_3->addItem(name);
+
     item->setHidden(true);
 }
 
@@ -184,11 +189,17 @@ void MainDirectory::listItemClicked(QListWidgetItem* item)
 //emergency
 void MainDirectory::on_listWidget_2_itemClicked(QListWidgetItem *item)
 {
+    //retrieve SSN from the name(item)
     QVariant v = item->data(Qt::UserRole);
     //QMessageBox::information(this, "SSN check", v.value<QString>());
-    consultPrescript* _consultPrescript = new consultPrescript(this);
-    _consultPrescript->show();
-    _consultPrescript->ssn = v.value<QString>();
+//    consultPrescript* _consultPrescript = new consultPrescript(this);
+//    _consultPrescript->show();
+//    _consultPrescript->ssn = v.value<QString>();
+    QListWidgetItem *name = new QListWidgetItem;
+    name->setText(item->data(0).toString());        //Set text of patient's name into name variable
+    name->setData(Qt::UserRole, v.value<QString>());//Set SSN data ino name variable
+    ui->listWidget_3->addItem(name);
+
     item->setHidden(true);
 }
 
@@ -196,4 +207,15 @@ void MainDirectory::on_pushButton_10_clicked()
 {
     editpatient *ed = new editpatient(this);
     ed->show();
+}
+
+
+void MainDirectory::on_listWidget_3_itemClicked(QListWidgetItem *item)
+{
+    QVariant v = item->data(Qt::UserRole);
+    //QMessageBox::information(this, "SSN check", v.value<QString>());
+    consultPrescript* _consultPrescript = new consultPrescript(this);
+    _consultPrescript->show();
+    _consultPrescript->ssn = v.value<QString>();
+    item->setHidden(true);
 }
