@@ -35,6 +35,8 @@ public:
     QLineEdit *lineEdit_2;
     QLabel *label_2;
     QLineEdit *lineEdit_3;
+    QPushButton *pushButton_increase;
+    QPushButton *pushButton_decrease;
 
     void setupUi(QWidget *addInventory)
     {
@@ -83,6 +85,12 @@ public:
 
         verticalLayout->addWidget(lineEdit_3);
 
+        pushButton_increase = new QPushButton(addInventory);
+        pushButton_increase->setObjectName(QStringLiteral("pushButton_increase"));
+        pushButton_increase->setGeometry(QRect(58, 230, 131, 25));
+        pushButton_decrease = new QPushButton(addInventory);
+        pushButton_decrease->setObjectName(QStringLiteral("pushButton_decrease"));
+        pushButton_decrease->setGeometry(QRect(210, 230, 141, 25));
 
         retranslateUi(addInventory);
 
@@ -92,11 +100,13 @@ public:
     void retranslateUi(QWidget *addInventory)
     {
         addInventory->setWindowTitle(QApplication::translate("addInventory", "Form", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("addInventory", "Add", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("addInventory", "Add New", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("addInventory", "Cancel", Q_NULLPTR));
         label->setText(QApplication::translate("addInventory", "Enter Item ID", Q_NULLPTR));
         label_3->setText(QApplication::translate("addInventory", "Enter Item Name", Q_NULLPTR));
         label_2->setText(QApplication::translate("addInventory", "Enter Item Quantity", Q_NULLPTR));
+        pushButton_increase->setText(QApplication::translate("addInventory", "Increase existing", Q_NULLPTR));
+        pushButton_decrease->setText(QApplication::translate("addInventory", "Decrease Existing", Q_NULLPTR));
     } // retranslateUi
 
 };

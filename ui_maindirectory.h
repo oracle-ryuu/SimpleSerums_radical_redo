@@ -50,6 +50,9 @@ public:
     QLabel *label;
     QLabel *label_3;
     QListWidget *listWidget_3;
+    QPushButton *pushButton_11;
+    QPushButton *pushButton_12;
+    QPushButton *pushButton_13;
 
     void setupUi(QDialog *MainDirectory)
     {
@@ -140,6 +143,15 @@ public:
         listWidget_3 = new QListWidget(MainDirectory);
         listWidget_3->setObjectName(QStringLiteral("listWidget_3"));
         listWidget_3->setGeometry(QRect(370, 440, 271, 231));
+        pushButton_11 = new QPushButton(MainDirectory);
+        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
+        pushButton_11->setGeometry(QRect(460, 240, 89, 25));
+        pushButton_12 = new QPushButton(MainDirectory);
+        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
+        pushButton_12->setGeometry(QRect(460, 280, 89, 25));
+        pushButton_13 = new QPushButton(MainDirectory);
+        pushButton_13->setObjectName(QStringLiteral("pushButton_13"));
+        pushButton_13->setGeometry(QRect(440, 320, 121, 25));
 
         retranslateUi(MainDirectory);
         QObject::connect(pushButton_7, SIGNAL(clicked()), lineEdit_2, SLOT(setFocus()));
@@ -164,6 +176,9 @@ public:
         checkBox->setText(QApplication::translate("MainDirectory", "Emergency", Q_NULLPTR));
         label->setText(QApplication::translate("MainDirectory", "Standard", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainDirectory", "Emergency", Q_NULLPTR));
+        pushButton_11->setText(QApplication::translate("MainDirectory", "Add Staff", Q_NULLPTR));
+        pushButton_12->setText(QApplication::translate("MainDirectory", "Edit Staff", Q_NULLPTR));
+        pushButton_13->setText(QApplication::translate("MainDirectory", "Remove Staff", Q_NULLPTR));
     } // retranslateUi
 
 };

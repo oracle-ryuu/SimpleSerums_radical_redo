@@ -44,6 +44,13 @@
      <widget class="QLineEdit" name="lineEdit_2"/>
     </item>
     <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Add prescription</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QDialogButtonBox" name="buttonBox">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>

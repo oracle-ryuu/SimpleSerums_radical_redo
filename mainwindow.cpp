@@ -23,7 +23,17 @@ void MainWindow::on_pushButton_clicked()
     username = ui->lineEdit_username->text();
     password = ui->lineEdit_password->text();
 
-    QSqlQuery qry;
+    //gives admin priveleges
+    if (username == "admin" && password == "password"){
+        ui->label_4->setText("Administrator can now add staff");
+        _maindirectory = new MainDirectory(this);
+        _maindirectory->show();
+        _maindirectory->setAdmin(true);
+    }
+
+    else{
+
+        QSqlQuery qry;
         qry.prepare("select * from STAFF where s_login=:user and s_password=:pass");
         qry.bindValue(":user", username);
         qry.bindValue(":pass", password);
@@ -37,6 +47,7 @@ void MainWindow::on_pushButton_clicked()
                 ui->label_4->setText("username and password is correct");
                 _maindirectory= new MainDirectory(this);
                 _maindirectory->show();
+                _maindirectory->setAdmin(false);
             }
             if (count > 1){
                 ui->label_4->setText("Duplicate username and password");
@@ -50,7 +61,7 @@ void MainWindow::on_pushButton_clicked()
             qDebug()<<qry.executedQuery();
             qDebug()<<qry.QSqlQuery::lastError();
         }
-
+    }
 }
 
 void MainWindow::on_lineEdit_password_returnPressed() //Hit enter/return in pasword will act as on_pushButton_clicked()
@@ -59,7 +70,16 @@ void MainWindow::on_lineEdit_password_returnPressed() //Hit enter/return in pasw
     username = ui->lineEdit_username->text();
     password = ui->lineEdit_password->text();
 
-    QSqlQuery qry;
+    //this gives admin priveleges
+    if (username == "admin" && password == "password"){
+        ui->label_4->setText("Administrator can now add staff");
+        _maindirectory = new MainDirectory(this);
+        _maindirectory->show();
+        _maindirectory->setAdmin(true);
+    }
+
+    else{
+        QSqlQuery qry;
         qry.prepare("select * from STAFF where s_login=:user and s_password=:pass");
         qry.bindValue(":user", username);
         qry.bindValue(":pass", password);
@@ -73,6 +93,7 @@ void MainWindow::on_lineEdit_password_returnPressed() //Hit enter/return in pasw
                 ui->label_4->setText("username and password is correct");
                 _maindirectory= new MainDirectory(this);
                 _maindirectory->show();
+                _maindirectory->setAdmin(false);
             }
             if (count > 1){
                 ui->label_4->setText("Duplicate username and password");
@@ -86,4 +107,5 @@ void MainWindow::on_lineEdit_password_returnPressed() //Hit enter/return in pasw
             qDebug()<<qry.executedQuery();
             qDebug()<<qry.QSqlQuery::lastError();
         }
+    }
 }

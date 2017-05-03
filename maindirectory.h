@@ -12,6 +12,9 @@
 #include "searchpatient.h"
 #include "editpatient.h"
 #include "editpatient2.h"
+#include "addstaff.h"
+#include "removestaff.h"
+#include "editstaff.h"
 
 namespace Ui {
 class MainDirectory;
@@ -24,6 +27,13 @@ class MainDirectory : public QDialog
 public:
     explicit MainDirectory(QWidget *parent = 0);
     ~MainDirectory();
+    //added this for the admin priveleges
+    void setAdmin(bool state){
+        admin = state;
+    }
+    bool returnAdmin(){
+        return admin;
+    }
 
 private slots:
     void on_pushButton_3_clicked();
@@ -55,6 +65,12 @@ private slots:
 
     void on_listWidget_3_itemClicked(QListWidgetItem *item);
 
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_13_clicked();
+
 private:
     Ui::MainDirectory *ui;
      addInventory *_addinventory;
@@ -64,7 +80,10 @@ private:
      addPatient *_addpatient;
      removepatient *_removepatient;
      searchpatient *_searchpatient;
-
+     addstaff *_addstaff;
+     removestaff *_removestaff;
+     editstaff *_editstaff;
+     bool admin;
      QString SSN; //Initalize Social Security Number Variable
 };
 

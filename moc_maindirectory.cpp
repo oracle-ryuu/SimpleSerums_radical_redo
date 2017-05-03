@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainDirectory_t {
-    QByteArrayData data[16];
-    char stringdata0[320];
+    QByteArrayData data[20];
+    char stringdata0[423];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,7 +46,11 @@ QT_MOC_LITERAL(11, 229, 15), // "listItemClicked"
 QT_MOC_LITERAL(12, 245, 16), // "QListWidgetItem*"
 QT_MOC_LITERAL(13, 262, 27), // "on_listWidget_2_itemClicked"
 QT_MOC_LITERAL(14, 290, 4), // "item"
-QT_MOC_LITERAL(15, 295, 24) // "on_pushButton_10_clicked"
+QT_MOC_LITERAL(15, 295, 24), // "on_pushButton_10_clicked"
+QT_MOC_LITERAL(16, 320, 27), // "on_listWidget_3_itemClicked"
+QT_MOC_LITERAL(17, 348, 24), // "on_pushButton_11_clicked"
+QT_MOC_LITERAL(18, 373, 24), // "on_pushButton_12_clicked"
+QT_MOC_LITERAL(19, 398, 24) // "on_pushButton_13_clicked"
 
     },
     "MainDirectory\0on_pushButton_3_clicked\0"
@@ -56,7 +60,11 @@ QT_MOC_LITERAL(15, 295, 24) // "on_pushButton_10_clicked"
     "on_pushButton_7_clicked\0on_pushButton_8_clicked\0"
     "on_pushButton_9_clicked\0listItemClicked\0"
     "QListWidgetItem*\0on_listWidget_2_itemClicked\0"
-    "item\0on_pushButton_10_clicked"
+    "item\0on_pushButton_10_clicked\0"
+    "on_listWidget_3_itemClicked\0"
+    "on_pushButton_11_clicked\0"
+    "on_pushButton_12_clicked\0"
+    "on_pushButton_13_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +74,7 @@ static const uint qt_meta_data_MainDirectory[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,18 +82,22 @@ static const uint qt_meta_data_MainDirectory[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x08 /* Private */,
-       3,    0,   75,    2, 0x08 /* Private */,
-       4,    0,   76,    2, 0x08 /* Private */,
-       5,    0,   77,    2, 0x08 /* Private */,
-       6,    0,   78,    2, 0x08 /* Private */,
-       7,    0,   79,    2, 0x08 /* Private */,
-       8,    0,   80,    2, 0x08 /* Private */,
-       9,    0,   81,    2, 0x08 /* Private */,
-      10,    0,   82,    2, 0x08 /* Private */,
-      11,    1,   83,    2, 0x08 /* Private */,
-      13,    1,   86,    2, 0x08 /* Private */,
-      15,    0,   89,    2, 0x08 /* Private */,
+       1,    0,   94,    2, 0x08 /* Private */,
+       3,    0,   95,    2, 0x08 /* Private */,
+       4,    0,   96,    2, 0x08 /* Private */,
+       5,    0,   97,    2, 0x08 /* Private */,
+       6,    0,   98,    2, 0x08 /* Private */,
+       7,    0,   99,    2, 0x08 /* Private */,
+       8,    0,  100,    2, 0x08 /* Private */,
+       9,    0,  101,    2, 0x08 /* Private */,
+      10,    0,  102,    2, 0x08 /* Private */,
+      11,    1,  103,    2, 0x08 /* Private */,
+      13,    1,  106,    2, 0x08 /* Private */,
+      15,    0,  109,    2, 0x08 /* Private */,
+      16,    1,  110,    2, 0x08 /* Private */,
+      17,    0,  113,    2, 0x08 /* Private */,
+      18,    0,  114,    2, 0x08 /* Private */,
+      19,    0,  115,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -99,6 +111,10 @@ static const uint qt_meta_data_MainDirectory[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 12,    2,
     QMetaType::Void, 0x80000000 | 12,   14,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 12,   14,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -122,6 +138,10 @@ void MainDirectory::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 9: _t->listItemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
         case 10: _t->on_listWidget_2_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
         case 11: _t->on_pushButton_10_clicked(); break;
+        case 12: _t->on_listWidget_3_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 13: _t->on_pushButton_11_clicked(); break;
+        case 14: _t->on_pushButton_12_clicked(); break;
+        case 15: _t->on_pushButton_13_clicked(); break;
         default: ;
         }
     }
@@ -152,13 +172,13 @@ int MainDirectory::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 16;
     }
     return _id;
 }

@@ -18,6 +18,11 @@ prescription::~prescription()
 
 void prescription::on_buttonBox_accepted()
 {
+   this->hide();
+}
+
+void prescription::on_pushButton_clicked()
+{
     QString id,quantity;
     id = ui->lineEdit_id->text();
     quantity = ui->lineEdit_2->text();
@@ -41,7 +46,8 @@ void prescription::on_buttonBox_accepted()
         else{
             QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
         }
-        this->hide();
+        ui->lineEdit_id->clear();
+        ui->lineEdit_2->clear();
     }
     else{
         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());

@@ -18,6 +18,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -32,6 +33,7 @@ public:
     QLineEdit *lineEdit_id;
     QLabel *label_2;
     QLineEdit *lineEdit_2;
+    QPushButton *pushButton;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *prescription)
@@ -65,6 +67,11 @@ public:
 
         verticalLayout->addWidget(lineEdit_2);
 
+        pushButton = new QPushButton(verticalLayoutWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        verticalLayout->addWidget(pushButton);
+
         buttonBox = new QDialogButtonBox(verticalLayoutWidget);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
@@ -85,6 +92,7 @@ public:
         prescription->setWindowTitle(QApplication::translate("prescription", "Dialog", Q_NULLPTR));
         label->setText(QApplication::translate("prescription", "Item ID", Q_NULLPTR));
         label_2->setText(QApplication::translate("prescription", "Quantity", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("prescription", "Add prescription", Q_NULLPTR));
     } // retranslateUi
 
 };

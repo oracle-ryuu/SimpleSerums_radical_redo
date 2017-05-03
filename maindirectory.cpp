@@ -13,6 +13,16 @@ MainDirectory::MainDirectory(QWidget *parent) :
     ui->pushButton_8->hide();
     ui->pushButton_9->hide();
     ui->checkBox->hide();
+    //these are admin buttons
+    ui->pushButton_11->hide();
+    ui->pushButton_12->hide();
+    ui->pushButton_13->hide();
+    //this is supposed to hide show buttons if you are admin
+    if(returnAdmin()){
+        ui->pushButton_11->show();
+        ui->pushButton_12->show();
+        ui->pushButton_13->show();
+    }
 
     //standard
     connect(ui->listWidget, SIGNAL(itemClicked(QListWidgetItem*)),
@@ -218,4 +228,22 @@ void MainDirectory::on_listWidget_3_itemClicked(QListWidgetItem *item)
     _consultPrescript->show();
     _consultPrescript->ssn = v.value<QString>();
     item->setHidden(true);
+}
+
+void MainDirectory::on_pushButton_11_clicked()
+{
+    _addstaff = new addstaff(this);
+    _addstaff->show();
+}
+
+void MainDirectory::on_pushButton_12_clicked()
+{
+    _editstaff = new editstaff(this);
+    _editstaff->show();
+}
+
+void MainDirectory::on_pushButton_13_clicked()
+{
+    _removestaff = new removestaff(this);
+    _removestaff->show();
 }
