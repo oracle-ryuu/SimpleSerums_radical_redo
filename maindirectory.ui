@@ -231,7 +231,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>240</y>
+     <y>300</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -244,7 +244,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>280</y>
+     <y>340</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -257,13 +257,33 @@
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>320</y>
+     <y>380</y>
      <width>121</width>
      <height>25</height>
     </rect>
    </property>
    <property name="text">
     <string>Remove Staff</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>420</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>420</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>

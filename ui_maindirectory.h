@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -53,6 +54,8 @@ public:
     QPushButton *pushButton_11;
     QPushButton *pushButton_12;
     QPushButton *pushButton_13;
+    QComboBox *comboBox;
+    QComboBox *comboBox_2;
 
     void setupUi(QDialog *MainDirectory)
     {
@@ -145,13 +148,19 @@ public:
         listWidget_3->setGeometry(QRect(370, 440, 271, 231));
         pushButton_11 = new QPushButton(MainDirectory);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-        pushButton_11->setGeometry(QRect(460, 240, 89, 25));
+        pushButton_11->setGeometry(QRect(460, 300, 89, 25));
         pushButton_12 = new QPushButton(MainDirectory);
         pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
-        pushButton_12->setGeometry(QRect(460, 280, 89, 25));
+        pushButton_12->setGeometry(QRect(460, 340, 89, 25));
         pushButton_13 = new QPushButton(MainDirectory);
         pushButton_13->setObjectName(QStringLiteral("pushButton_13"));
-        pushButton_13->setGeometry(QRect(440, 320, 121, 25));
+        pushButton_13->setGeometry(QRect(440, 380, 121, 25));
+        comboBox = new QComboBox(MainDirectory);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(250, 420, 91, 22));
+        comboBox_2 = new QComboBox(MainDirectory);
+        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+        comboBox_2->setGeometry(QRect(670, 420, 91, 22));
 
         retranslateUi(MainDirectory);
         QObject::connect(pushButton_7, SIGNAL(clicked()), lineEdit_2, SLOT(setFocus()));
