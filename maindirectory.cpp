@@ -7,6 +7,7 @@ MainDirectory::MainDirectory(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainDirectory)
 {
+    setAdmin(false);
     ui->setupUi(this);
     ui->lineEdit_2->hide();
     ui->label_2->hide();
@@ -17,12 +18,6 @@ MainDirectory::MainDirectory(QWidget *parent) :
     ui->pushButton_11->hide();
     ui->pushButton_12->hide();
     ui->pushButton_13->hide();
-    //this is supposed to hide show buttons if you are admin
-    if(returnAdmin()){
-        ui->pushButton_11->show();
-        ui->pushButton_12->show();
-        ui->pushButton_13->show();
-    }
 
     //add rooms to drop box
     ui->comboBox->addItem("Room 1");
@@ -45,6 +40,12 @@ MainDirectory::~MainDirectory()
     delete ui;
 }
 
+//this is supposed to show buttons if you are admin
+void MainDirectory::showAdminButtons(){
+    ui->pushButton_11->show();
+    ui->pushButton_12->show();
+    ui->pushButton_13->show();
+}
 
 void MainDirectory::on_pushButton_3_clicked()
 {

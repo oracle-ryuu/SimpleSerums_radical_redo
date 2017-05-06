@@ -171,9 +171,9 @@ public:
     void retranslateUi(QDialog *MainDirectory)
     {
         MainDirectory->setWindowTitle(QApplication::translate("MainDirectory", "Dialog", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("MainDirectory", "search inventory", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainDirectory", "add stock", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainDirectory", "remove stock", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainDirectory", "search for item", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("MainDirectory", "change item", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainDirectory", "delete item", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("MainDirectory", "search patient", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainDirectory", "add patient", Q_NULLPTR));
         pushButton_10->setText(QApplication::translate("MainDirectory", "edit patient", Q_NULLPTR));

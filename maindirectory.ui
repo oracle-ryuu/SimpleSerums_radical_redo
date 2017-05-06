@@ -26,21 +26,21 @@
     <item>
      <widget class="QPushButton" name="pushButton_3">
       <property name="text">
-       <string>search inventory</string>
+       <string>search for item</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
-       <string>add stock</string>
+       <string>change item</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>remove stock</string>
+       <string>delete item</string>
       </property>
      </widget>
     </item>

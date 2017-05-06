@@ -34,6 +34,7 @@ public:
     bool returnAdmin(){
         return admin;
     }
+    void showAdminButtons();
 
 private slots:
     void on_pushButton_3_clicked();
