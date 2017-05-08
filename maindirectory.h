@@ -85,6 +85,7 @@ private:
      editstaff *_editstaff;
      bool admin;
      QString SSN; //Initalize Social Security Number Variable
+     bool full[4] = {true, true, true, true}; //Initalize array to check if room is free
 };
 
 #endif // MAINDIRECTORY_H
