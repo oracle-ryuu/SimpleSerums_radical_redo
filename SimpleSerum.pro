@@ -83,3 +83,10 @@ FORMS    += mainwindow.ui \
     editstaff2.ui
 
 DISTFILES +=
+
+RESOURCES += \
+    bg2.qrc \
+    bg3.qrc \
+    bg4.qrc \
+    red.qrc \
+    green.qrc
