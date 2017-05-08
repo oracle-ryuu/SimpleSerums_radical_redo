@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/BGs">
+        <file>build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/admin.png</file>
+        <file>build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/consult.png</file>
+        <file>build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG5.png</file>
+        <file>build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/red add.png</file>
+        <file>build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG6.png</file>
+        <file>build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png</file>
+    </qresource>
+</RCC>

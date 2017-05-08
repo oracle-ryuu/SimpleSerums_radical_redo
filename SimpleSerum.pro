@@ -89,4 +89,6 @@ RESOURCES += \
     bg3.qrc \
     bg4.qrc \
     red.qrc \
-    green.qrc
+    green.qrc \
+    add.qrc \
+    colors.qrc
