@@ -30,6 +30,10 @@ public:
     QSplitter *splitter_2;
     QLabel *label;
     QLineEdit *lineEdit;
+    QLabel *label_2;
+    QLineEdit *lineEdit_2;
+    QPushButton *pushButton_3;
+    QLabel *label_3;
 
     void setupUi(QWidget *searchInventory)
     {
@@ -38,13 +42,13 @@ public:
         searchInventory->resize(400, 300);
         pushButton_2 = new QPushButton(searchInventory);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(80, 150, 80, 25));
+        pushButton_2->setGeometry(QRect(150, 220, 80, 25));
         pushButton = new QPushButton(searchInventory);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(200, 150, 80, 25));
+        pushButton->setGeometry(QRect(50, 130, 80, 25));
         splitter_2 = new QSplitter(searchInventory);
         splitter_2->setObjectName(QStringLiteral("splitter_2"));
-        splitter_2->setGeometry(QRect(130, 80, 108, 41));
+        splitter_2->setGeometry(QRect(40, 50, 108, 41));
         splitter_2->setOrientation(Qt::Vertical);
         label = new QLabel(splitter_2);
         label->setObjectName(QStringLiteral("label"));
@@ -52,9 +56,25 @@ public:
         lineEdit = new QLineEdit(splitter_2);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         splitter_2->addWidget(lineEdit);
+        label_2 = new QLabel(searchInventory);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(230, 50, 121, 20));
+        lineEdit_2 = new QLineEdit(searchInventory);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(230, 70, 111, 21));
+        pushButton_3 = new QPushButton(searchInventory);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(250, 130, 80, 26));
+        label_3 = new QLabel(searchInventory);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(180, 70, 21, 20));
         splitter_2->raise();
         pushButton_2->raise();
         pushButton->raise();
+        label_2->raise();
+        lineEdit_2->raise();
+        pushButton_3->raise();
+        label_3->raise();
 
         retranslateUi(searchInventory);
 
@@ -67,6 +87,9 @@ public:
         pushButton_2->setText(QApplication::translate("searchInventory", "Cancel", Q_NULLPTR));
         pushButton->setText(QApplication::translate("searchInventory", "Search", Q_NULLPTR));
         label->setText(QApplication::translate("searchInventory", "Enter Item ID", Q_NULLPTR));
+        label_2->setText(QApplication::translate("searchInventory", "Enter Item Name", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("searchInventory", "Search", Q_NULLPTR));
+        label_3->setText(QApplication::translate("searchInventory", "or", Q_NULLPTR));
     } // retranslateUi
 
 };
