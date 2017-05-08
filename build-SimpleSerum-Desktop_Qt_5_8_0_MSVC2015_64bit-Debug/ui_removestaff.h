@@ -37,6 +37,7 @@ public:
         if (removestaff->objectName().isEmpty())
             removestaff->setObjectName(QStringLiteral("removestaff"));
         removestaff->resize(400, 300);
+        removestaff->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/admin.png);"));
         buttonBox = new QDialogButtonBox(removestaff);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(110, 180, 171, 32));

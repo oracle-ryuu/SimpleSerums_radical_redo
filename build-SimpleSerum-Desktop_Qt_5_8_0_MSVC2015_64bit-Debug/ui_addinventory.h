@@ -43,6 +43,8 @@ public:
         if (addInventory->objectName().isEmpty())
             addInventory->setObjectName(QStringLiteral("addInventory"));
         addInventory->resize(400, 300);
+        addInventory->setAutoFillBackground(true);
+        addInventory->setStyleSheet(QStringLiteral("background-image: url(:/green/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG5.png);"));
         pushButton = new QPushButton(addInventory);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(210, 190, 80, 25));

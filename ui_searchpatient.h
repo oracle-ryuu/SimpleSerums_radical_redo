@@ -42,9 +42,10 @@ public:
         if (searchpatient->objectName().isEmpty())
             searchpatient->setObjectName(QStringLiteral("searchpatient"));
         searchpatient->resize(400, 300);
+        searchpatient->setStyleSheet(QStringLiteral("background-image: url(:/red/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG6.png);"));
         horizontalLayoutWidget = new QWidget(searchpatient);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(59, 230, 263, 80));
+        horizontalLayoutWidget->setGeometry(QRect(59, 230, 295, 80));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);

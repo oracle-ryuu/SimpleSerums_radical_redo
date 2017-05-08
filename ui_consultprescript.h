@@ -45,9 +45,11 @@ public:
         if (consultPrescript->objectName().isEmpty())
             consultPrescript->setObjectName(QStringLiteral("consultPrescript"));
         consultPrescript->resize(400, 300);
+        consultPrescript->setStyleSheet(QLatin1String("background-image: url(:/bg4/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);\n"
+"background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/consult.png);"));
         verticalLayoutWidget = new QWidget(consultPrescript);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 30, 321, 235));
+        verticalLayoutWidget->setGeometry(QRect(30, 30, 321, 251));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);

@@ -36,6 +36,7 @@ public:
         if (removeInventory->objectName().isEmpty())
             removeInventory->setObjectName(QStringLiteral("removeInventory"));
         removeInventory->resize(400, 300);
+        removeInventory->setStyleSheet(QStringLiteral("background-image: url(:/green/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG5.png);"));
         pushButton = new QPushButton(removeInventory);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(200, 160, 80, 25));

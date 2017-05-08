@@ -37,6 +37,7 @@ public:
         if (editstaff->objectName().isEmpty())
             editstaff->setObjectName(QStringLiteral("editstaff"));
         editstaff->resize(400, 300);
+        editstaff->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/admin.png);"));
         buttonBox = new QDialogButtonBox(editstaff);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(100, 190, 181, 32));

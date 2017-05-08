@@ -42,6 +42,7 @@ public:
         if (removepatient->objectName().isEmpty())
             removepatient->setObjectName(QStringLiteral("removepatient"));
         removepatient->resize(400, 300);
+        removepatient->setStyleSheet(QStringLiteral("background-image: url(:/red/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG6.png);"));
         verticalLayoutWidget = new QWidget(removepatient);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(69, 119, 241, 71));

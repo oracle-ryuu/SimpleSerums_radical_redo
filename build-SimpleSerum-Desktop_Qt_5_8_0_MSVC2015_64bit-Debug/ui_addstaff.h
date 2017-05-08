@@ -51,6 +51,9 @@ public:
         if (addstaff->objectName().isEmpty())
             addstaff->setObjectName(QStringLiteral("addstaff"));
         addstaff->resize(400, 300);
+        addstaff->setAutoFillBackground(true);
+        addstaff->setStyleSheet(QLatin1String("background-image: url(:/bg4/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);\n"
+"background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/admin.png);"));
         buttonBox = new QDialogButtonBox(addstaff);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(120, 240, 171, 32));

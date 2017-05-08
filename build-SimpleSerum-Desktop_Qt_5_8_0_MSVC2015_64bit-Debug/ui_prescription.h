@@ -41,9 +41,10 @@ public:
         if (prescription->objectName().isEmpty())
             prescription->setObjectName(QStringLiteral("prescription"));
         prescription->resize(400, 300);
+        prescription->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/consult.png);"));
         verticalLayoutWidget = new QWidget(prescription);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(110, 40, 168, 201));
+        verticalLayoutWidget->setGeometry(QRect(110, 40, 195, 201));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);

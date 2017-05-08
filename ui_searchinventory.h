@@ -40,6 +40,7 @@ public:
         if (searchInventory->objectName().isEmpty())
             searchInventory->setObjectName(QStringLiteral("searchInventory"));
         searchInventory->resize(400, 300);
+        searchInventory->setStyleSheet(QStringLiteral("background-image: url(:/green/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG5.png);"));
         pushButton_2 = new QPushButton(searchInventory);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(150, 220, 80, 25));
@@ -64,7 +65,7 @@ public:
         lineEdit_2->setGeometry(QRect(230, 70, 111, 21));
         pushButton_3 = new QPushButton(searchInventory);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(250, 130, 80, 26));
+        pushButton_3->setGeometry(QRect(240, 130, 80, 26));
         label_3 = new QLabel(searchInventory);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(180, 70, 21, 20));

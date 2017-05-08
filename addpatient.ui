@@ -39,6 +39,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_3">
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/img/img/BG3.png);</string>
       </property>

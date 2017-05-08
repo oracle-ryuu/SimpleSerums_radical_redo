@@ -36,6 +36,9 @@ public:
         if (checkIn->objectName().isEmpty())
             checkIn->setObjectName(QStringLiteral("checkIn"));
         checkIn->resize(400, 300);
+        checkIn->setAutoFillBackground(true);
+        checkIn->setStyleSheet(QLatin1String("background-image: url(:/bg4/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);\n"
+"background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/consult.png);"));
         label = new QLabel(checkIn);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(100, 50, 171, 17));

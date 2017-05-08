@@ -59,6 +59,7 @@ public:
         if (MainDirectory->objectName().isEmpty())
             MainDirectory->setObjectName(QStringLiteral("MainDirectory"));
         MainDirectory->resize(1035, 761);
+        MainDirectory->setStyleSheet(QStringLiteral("background-image: url(:/img/img/BG3.png);"));
         verticalLayoutWidget = new QWidget(MainDirectory);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(30, 20, 160, 701));

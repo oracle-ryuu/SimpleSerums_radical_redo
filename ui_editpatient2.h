@@ -57,6 +57,7 @@ public:
         if (editpatient2->objectName().isEmpty())
             editpatient2->setObjectName(QStringLiteral("editpatient2"));
         editpatient2->resize(517, 776);
+        editpatient2->setStyleSheet(QStringLiteral("background-image: url(:/red/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG6.png);"));
         horizontalLayoutWidget = new QWidget(editpatient2);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(50, 660, 311, 51));

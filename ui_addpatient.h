@@ -59,6 +59,7 @@ public:
         if (addPatient->objectName().isEmpty())
             addPatient->setObjectName(QStringLiteral("addPatient"));
         addPatient->resize(518, 746);
+        addPatient->setStyleSheet(QStringLiteral("background-image: url(:/new/prefix1/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/red add.png);"));
         verticalLayoutWidget_2 = new QWidget(addPatient);
         verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
         verticalLayoutWidget_2->setGeometry(QRect(290, 30, 211, 621));
@@ -67,11 +68,15 @@ public:
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         label_4 = new QLabel(verticalLayoutWidget_2);
         label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setStyleSheet(QLatin1String("background-color: rgb(255, 85, 0);\n"
+"background-image: url(:/img/img/BG3.png);"));
 
         verticalLayout_2->addWidget(label_4);
 
         label_3 = new QLabel(verticalLayoutWidget_2);
         label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setAutoFillBackground(true);
+        label_3->setStyleSheet(QStringLiteral("background-image: url(:/img/img/BG3.png);"));
 
         verticalLayout_2->addWidget(label_3);
 

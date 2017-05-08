@@ -40,6 +40,7 @@ public:
         if (listconsults->objectName().isEmpty())
             listconsults->setObjectName(QStringLiteral("listconsults"));
         listconsults->resize(400, 368);
+        listconsults->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/consult.png);"));
         verticalLayoutWidget = new QWidget(listconsults);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(30, 32, 341, 291));

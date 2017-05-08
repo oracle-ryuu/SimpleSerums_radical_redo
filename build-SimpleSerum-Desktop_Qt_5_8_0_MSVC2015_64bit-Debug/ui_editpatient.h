@@ -41,6 +41,7 @@ public:
         if (editpatient->objectName().isEmpty())
             editpatient->setObjectName(QStringLiteral("editpatient"));
         editpatient->resize(400, 300);
+        editpatient->setStyleSheet(QStringLiteral("background-image: url(:/red/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG6.png);"));
         verticalLayoutWidget = new QWidget(editpatient);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(101, 40, 160, 80));
