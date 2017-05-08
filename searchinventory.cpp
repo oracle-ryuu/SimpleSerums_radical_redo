@@ -53,15 +53,16 @@ void searchInventory::on_pushButton_3_clicked()
 {
     QString NAME = ui->lineEdit_2->text();
     //SEARCH DATABASE WITH SQL
-    QString name,count; //output qstrings
+    QString name,count, ID; //output qstrings
     QSqlQuery qry;
-    qry.prepare("select i_name,i_count from ITEM where i_name=:i_name");
+    qry.prepare("select i_name,i_count,i_id from ITEM where i_name=:i_name");
     qry.bindValue(":i_name", NAME);
     if(qry.exec()){
         if(qry.next()){
             name = qry.value(0).toString();
             count = qry.value(1).toString();
-            QString info = "name: " + name + "\ncount: " + count;
+            ID = qry.value(2).toString();
+            QString info = "name: " + name + "\ncount: " + count + "\nid: " + ID;
         QMessageBox::information(this, "Info", info);
         }
         else{
