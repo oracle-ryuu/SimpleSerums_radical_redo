@@ -7,8 +7,8 @@ MainDirectory::MainDirectory(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainDirectory)
 {
-    setAdmin(false);
     ui->setupUi(this);
+
     ui->lineEdit_2->hide();
     ui->label_2->hide();
     ui->pushButton_8->hide();
@@ -18,17 +18,12 @@ MainDirectory::MainDirectory(QWidget *parent) :
     ui->pushButton_11->hide();
     ui->pushButton_12->hide();
     ui->pushButton_13->hide();
-
-    //add rooms to drop box
-    ui->comboBox->addItem("Room 1");
-    ui->comboBox->addItem("Room 2");
-    ui->comboBox->addItem("Room 3");
-    ui->comboBox->addItem("Room 4");
-
-    ui->comboBox_2->addItem("Room 1");
-    ui->comboBox_2->addItem("Room 2");
-    ui->comboBox_2->addItem("Room 3");
-    ui->comboBox_2->addItem("Room 4");
+    //this is supposed to hide show buttons if you are admin
+    if(returnAdmin()){
+        ui->pushButton_11->show();
+        ui->pushButton_12->show();
+        ui->pushButton_13->show();
+    }
 
     //standard
     connect(ui->listWidget, SIGNAL(itemClicked(QListWidgetItem*)),
@@ -40,12 +35,6 @@ MainDirectory::~MainDirectory()
     delete ui;
 }
 
-//this is supposed to show buttons if you are admin
-void MainDirectory::showAdminButtons(){
-    ui->pushButton_11->show();
-    ui->pushButton_12->show();
-    ui->pushButton_13->show();
-}
 
 void MainDirectory::on_pushButton_3_clicked()
 {
@@ -193,73 +182,36 @@ void MainDirectory::on_pushButton_9_clicked()
 //standard
 void MainDirectory::listItemClicked(QListWidgetItem* item)
 {
-    int roomNum;
-    roomNum = ui->comboBox->currentText().mid(5).toInt();   //Obtain Room Number by getting the last digit from string
+    //retrieve SSN from the name(item)
+    QVariant v = item->data(Qt::UserRole);
+    //QMessageBox::information(this, "SSN check", v.value<QString>());
+//    consultPrescript* _consultPrescript = new consultPrescript(this);
+//    _consultPrescript->show();
+//    _consultPrescript->ssn = v.value<QString>();
+    QListWidgetItem *name = new QListWidgetItem;
+    name->setText(item->data(0).toString());        //Set text of patient's name into name variable
+    name->setData(Qt::UserRole, v.value<QString>());//Set SSN data ino name variable
+    ui->listWidget_3->addItem(name);
 
-    if(!full[roomNum - 1]) //If room is currently Used, output error
-    {
-        QMessageBox::critical(this, tr("Being Used"), tr("Select room is currently being used"));
-    }
-    else
-    {
-        //retrieve SSN from the name(item)
-        QVariant v = item->data(Qt::UserRole);
-        //QMessageBox::information(this, "SSN check", v.value<QString>());
-    //    consultPrescript* _consultPrescript = new consultPrescript(this);
-    //    _consultPrescript->show();
-    //    _consultPrescript->ssn = v.value<QString>();
-        QListWidgetItem *name = new QListWidgetItem;
-        QString nameTxt = item->data(0).toString();
-
-        while (nameTxt.size() < 56)
-            nameTxt += " ";
-
-        name->setText(nameTxt + ui->comboBox->currentText());        //Set text of patient's name into name variable
-        name->setData(Qt::UserRole, v.value<QString>());//Set SSN data ino name variable
-        name->setTextAlignment(Qt::AlignRight);
-
-        ui->listWidget_3->addItem(name);
-
-        item->setHidden(true);
-        full[roomNum - 1] = false;
-    }
-
+    item->setHidden(true);
 }
 
 //bring up window to allow addition of consultation/prescription
 //emergency
 void MainDirectory::on_listWidget_2_itemClicked(QListWidgetItem *item)
 {
-    int roomNum;
-    roomNum = ui->comboBox_2->currentText().mid(5).toInt();   //Obtain Room Number by getting the last digit from string
+    //retrieve SSN from the name(item)
+    QVariant v = item->data(Qt::UserRole);
+    //QMessageBox::information(this, "SSN check", v.value<QString>());
+//    consultPrescript* _consultPrescript = new consultPrescript(this);
+//    _consultPrescript->show();
+//    _consultPrescript->ssn = v.value<QString>();
+    QListWidgetItem *name = new QListWidgetItem;
+    name->setText(item->data(0).toString());        //Set text of patient's name into name variable
+    name->setData(Qt::UserRole, v.value<QString>());//Set SSN data ino name variable
+    ui->listWidget_3->addItem(name);
 
-    if(!full[roomNum - 1]) //If room is currently Used, output error
-    {
-        QMessageBox::critical(this, tr("Being Used"), tr("Select room is currently being used"));
-    }
-    else
-    {
-        //retrieve SSN from the name(item)
-        QVariant v = item->data(Qt::UserRole);
-        //QMessageBox::information(this, "SSN check", v.value<QString>());
-    //    consultPrescript* _consultPrescript = new consultPrescript(this);
-    //    _consultPrescript->show();
-    //    _consultPrescript->ssn = v.value<QString>();
-        QListWidgetItem *name = new QListWidgetItem;
-        QString nameTxt = item->data(0).toString();
-
-        while (nameTxt.size() < 56)
-            nameTxt += " ";
-
-        name->setText(nameTxt + ui->comboBox_2->currentText());        //Set text of patient's name into name variable
-        name->setData(Qt::UserRole, v.value<QString>());//Set SSN data ino name variable
-        name->setTextAlignment(Qt::AlignRight);
-
-        ui->listWidget_3->addItem(name);
-
-        item->setHidden(true);
-        full[roomNum - 1] = false;
-    }
+    item->setHidden(true);
 }
 
 void MainDirectory::on_pushButton_10_clicked()
@@ -271,10 +223,6 @@ void MainDirectory::on_pushButton_10_clicked()
 
 void MainDirectory::on_listWidget_3_itemClicked(QListWidgetItem *item)
 {
-    int roomNum;
-    roomNum = item->text().right(1).toInt();
-    full[roomNum - 1] = true;
-
     QVariant v = item->data(Qt::UserRole);
     //QMessageBox::information(this, "SSN check", v.value<QString>());
     consultPrescript* _consultPrescript = new consultPrescript(this);

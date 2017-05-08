@@ -27,8 +27,8 @@ void MainWindow::on_pushButton_clicked()
     if (username == "admin" && password == "password"){
         ui->label_4->setText("Administrator can now add staff");
         _maindirectory = new MainDirectory(this);
-        _maindirectory->showAdminButtons();
         _maindirectory->show();
+        _maindirectory->setAdmin(true);
     }
 
     else{
@@ -47,6 +47,7 @@ void MainWindow::on_pushButton_clicked()
                 ui->label_4->setText("username and password is correct");
                 _maindirectory= new MainDirectory(this);
                 _maindirectory->show();
+                _maindirectory->setAdmin(false);
             }
             if (count > 1){
                 ui->label_4->setText("Duplicate username and password");
@@ -74,7 +75,7 @@ void MainWindow::on_lineEdit_password_returnPressed() //Hit enter/return in pasw
         ui->label_4->setText("Administrator can now add staff");
         _maindirectory = new MainDirectory(this);
         _maindirectory->show();
-        _maindirectory->showAdminButtons();
+        _maindirectory->setAdmin(true);
     }
 
     else{
@@ -92,6 +93,7 @@ void MainWindow::on_lineEdit_password_returnPressed() //Hit enter/return in pasw
                 ui->label_4->setText("username and password is correct");
                 _maindirectory= new MainDirectory(this);
                 _maindirectory->show();
+                _maindirectory->setAdmin(false);
             }
             if (count > 1){
                 ui->label_4->setText("Duplicate username and password");
