@@ -51,11 +51,13 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         label = new QLabel(verticalLayoutWidget);
         label->setObjectName(QStringLiteral("label"));
+        label->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(label);
 
         ID = new QLineEdit(verticalLayoutWidget);
         ID->setObjectName(QStringLiteral("ID"));
+        ID->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(ID);
 

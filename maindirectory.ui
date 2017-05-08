@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>pull actually it sa</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/img/img/BG3.png);</string>
@@ -111,6 +111,9 @@
      <height>25</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_8">
    <property name="geometry">
@@ -160,6 +163,9 @@
      <height>351</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+   </property>
   </widget>
   <widget class="QListWidget" name="listWidget_2">
    <property name="geometry">
@@ -169,6 +175,9 @@
      <width>141</width>
      <height>351</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBox">
@@ -228,6 +237,9 @@
      <width>271</width>
      <height>231</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_11">

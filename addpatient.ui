@@ -40,7 +40,7 @@ background-image: url(:/img/img/BG3.png);</string>
     <item>
      <widget class="QLabel" name="label_3">
       <property name="autoFillBackground">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/img/img/BG3.png);</string>
@@ -52,6 +52,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_6">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Date of birth (yyyy-mm-dd)</string>
       </property>
@@ -59,6 +62,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_9">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Address</string>
       </property>
@@ -66,6 +72,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_8">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Sex</string>
       </property>
@@ -73,6 +82,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_7">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Phone</string>
       </property>
@@ -80,6 +92,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_5">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Insurance Comp</string>
       </property>
@@ -87,6 +102,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Customer Number</string>
       </property>
@@ -94,6 +112,9 @@ background-image: url(:/img/img/BG3.png);</string>
     </item>
     <item>
      <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Doctor ID</string>
       </property>
@@ -112,35 +133,70 @@ background-image: url(:/img/img/BG3.png);</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLineEdit" name="SSN"/>
+     <widget class="QLineEdit" name="SSN">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="pat_Name"/>
+     <widget class="QLineEdit" name="pat_Name">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="DOB"/>
+     <widget class="QLineEdit" name="DOB">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="Address"/>
+     <widget class="QLineEdit" name="Address">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="Sex"/>
+     <widget class="QLineEdit" name="Sex">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLineEdit" name="pat_Phone">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ins_Name"/>
+     <widget class="QLineEdit" name="ins_Name">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ins_Nom"/>
+     <widget class="QLineEdit" name="ins_Nom">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="doc_ID"/>
+     <widget class="QLineEdit" name="doc_ID">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

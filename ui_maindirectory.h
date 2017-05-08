@@ -59,6 +59,7 @@ public:
         if (MainDirectory->objectName().isEmpty())
             MainDirectory->setObjectName(QStringLiteral("MainDirectory"));
         MainDirectory->resize(1035, 761);
+        MainDirectory->setStyleSheet(QStringLiteral("background-image: url(:/img/img/BG3.png);"));
         verticalLayoutWidget = new QWidget(MainDirectory);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(30, 20, 160, 701));
@@ -112,6 +113,7 @@ public:
         lineEdit_2 = new QLineEdit(MainDirectory);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(420, 110, 181, 25));
+        lineEdit_2->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
         pushButton_8 = new QPushButton(MainDirectory);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setGeometry(QRect(420, 170, 80, 25));
@@ -124,9 +126,11 @@ public:
         listWidget = new QListWidget(MainDirectory);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(230, 60, 141, 351));
+        listWidget->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
         listWidget_2 = new QListWidget(MainDirectory);
         listWidget_2->setObjectName(QStringLiteral("listWidget_2"));
         listWidget_2->setGeometry(QRect(640, 60, 141, 351));
+        listWidget_2->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
         checkBox = new QCheckBox(MainDirectory);
         checkBox->setObjectName(QStringLiteral("checkBox"));
         checkBox->setGeometry(QRect(420, 140, 121, 21));
@@ -143,6 +147,7 @@ public:
         listWidget_3 = new QListWidget(MainDirectory);
         listWidget_3->setObjectName(QStringLiteral("listWidget_3"));
         listWidget_3->setGeometry(QRect(370, 440, 271, 231));
+        listWidget_3->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
         pushButton_11 = new QPushButton(MainDirectory);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
         pushButton_11->setGeometry(QRect(460, 240, 89, 25));
@@ -161,7 +166,7 @@ public:
 
     void retranslateUi(QDialog *MainDirectory)
     {
-        MainDirectory->setWindowTitle(QApplication::translate("MainDirectory", "Dialog", Q_NULLPTR));
+        MainDirectory->setWindowTitle(QApplication::translate("MainDirectory", "pull actually it sa", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("MainDirectory", "search inventory", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainDirectory", "add stock", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainDirectory", "remove stock", Q_NULLPTR));

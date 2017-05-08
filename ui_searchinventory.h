@@ -56,6 +56,7 @@ public:
         splitter_2->addWidget(label);
         lineEdit = new QLineEdit(splitter_2);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg green.png);"));
         splitter_2->addWidget(lineEdit);
         label_2 = new QLabel(searchInventory);
         label_2->setObjectName(QStringLiteral("label_2"));
@@ -63,6 +64,7 @@ public:
         lineEdit_2 = new QLineEdit(searchInventory);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(230, 70, 111, 21));
+        lineEdit_2->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg green.png);"));
         pushButton_3 = new QPushButton(searchInventory);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(240, 130, 80, 26));

@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/red/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG6.png);</string>
+   <string notr="true">background-image: url(:/new/prefix1/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/red add.png);</string>
   </property>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
@@ -54,6 +54,13 @@
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QLabel" name="label_14">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/new/prefix1/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/red add.png);
+background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Name</string>
       </property>
@@ -61,6 +68,9 @@
     </item>
     <item>
      <widget class="QLabel" name="label_15">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Date of birth (yyyy-mm-dd)</string>
       </property>
@@ -68,6 +78,9 @@
     </item>
     <item>
      <widget class="QLabel" name="label_16">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Address</string>
       </property>
@@ -75,6 +88,9 @@
     </item>
     <item>
      <widget class="QLabel" name="label_20">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Sex</string>
       </property>
@@ -82,6 +98,9 @@
     </item>
     <item>
      <widget class="QLabel" name="label_21">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Phone</string>
       </property>
@@ -89,6 +108,9 @@
     </item>
     <item>
      <widget class="QLabel" name="label_22">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Insurance Comp</string>
       </property>
@@ -96,6 +118,9 @@
     </item>
     <item>
      <widget class="QLabel" name="label_23">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Customer Number</string>
       </property>
@@ -103,6 +128,9 @@
     </item>
     <item>
      <widget class="QLabel" name="label_24">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);</string>
+      </property>
       <property name="text">
        <string>Doctor ID</string>
       </property>

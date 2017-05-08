@@ -91,4 +91,5 @@ RESOURCES += \
     red.qrc \
     green.qrc \
     add.qrc \
-    colors.qrc
+    colors.qrc \
+    txtcolor.qrc

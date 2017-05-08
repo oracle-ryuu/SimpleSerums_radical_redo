@@ -177,45 +177,17 @@ DESTDIR_TARGET = debug\SimpleSerum.exe
 
 .SUFFIXES: .c .cpp .cc .cxx
 
-{debug}.cpp{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
+.cpp.obj:
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
 
-{debug}.cc{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
+.cc.obj:
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
 
-{debug}.cxx{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
+.cxx.obj:
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fo$@ $<
 
-{debug}.c{debug\}.obj::
-	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
-{.}.cpp{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
-{.}.cc{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
-{.}.cxx{debug\}.obj::
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
-
-{.}.c{debug\}.obj::
-	$(CC) -c $(CFLAGS) $(INCPATH) -Fodebug\ @<<
-	$<
-<<
+.c.obj:
+	$(CC) -c $(CFLAGS) $(INCPATH) -Fo$@ $<
 
 ####### Build rules
 
@@ -5161,6 +5133,7 @@ debug\main.obj: main.cpp mainwindow.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.8\msvc2015_64\include\QtGui\qguiapplication.h \
 		C:\Qt\5.8\msvc2015_64\include\QtGui\qinputmethod.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\main.obj main.cpp
 
 debug\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMainWindow \
@@ -5475,6 +5448,7 @@ debug\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\mainwindow.obj mainwindow.cpp
 
 debug\searchinventory.obj: searchinventory.cpp searchinventory.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -5758,6 +5732,7 @@ debug\searchinventory.obj: searchinventory.cpp searchinventory.h \
 		C:\Qt\5.8\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\searchinventory.obj searchinventory.cpp
 
 debug\removeinventory.obj: removeinventory.cpp removeinventory.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -6041,6 +6016,7 @@ debug\removeinventory.obj: removeinventory.cpp removeinventory.h \
 		C:\Qt\5.8\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\removeinventory.obj removeinventory.cpp
 
 debug\addinventory.obj: addinventory.cpp addinventory.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -6327,6 +6303,7 @@ debug\addinventory.obj: addinventory.cpp addinventory.h \
 		C:\Qt\5.8\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\addinventory.obj addinventory.cpp
 
 debug\checkin.obj: checkin.cpp checkin.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -6476,6 +6453,7 @@ debug\checkin.obj: checkin.cpp checkin.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\checkin.obj checkin.cpp
 
 debug\maindirectory.obj: maindirectory.cpp maindirectory.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QListWidgetItem \
@@ -6783,6 +6761,7 @@ debug\maindirectory.obj: maindirectory.cpp maindirectory.h \
 		prescription.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\maindirectory.obj maindirectory.cpp
 
 debug\addpatient.obj: addpatient.cpp addpatient.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -7070,6 +7049,7 @@ debug\addpatient.obj: addpatient.cpp addpatient.h \
 		C:\Qt\5.8\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\addpatient.obj addpatient.cpp
 
 debug\removepatient.obj: removepatient.cpp removepatient.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -7357,6 +7337,7 @@ debug\removepatient.obj: removepatient.cpp removepatient.h \
 		C:\Qt\5.8\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\removepatient.obj removepatient.cpp
 
 debug\searchpatient.obj: searchpatient.cpp searchpatient.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -7647,6 +7628,7 @@ debug\searchpatient.obj: searchpatient.cpp searchpatient.h \
 		C:\Qt\5.8\msvc2015_64\include\QtCore\QString \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\searchpatient.obj searchpatient.cpp
 
 debug\consultprescript.obj: consultprescript.cpp consultprescript.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -7939,6 +7921,7 @@ debug\consultprescript.obj: consultprescript.cpp consultprescript.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\consultprescript.obj consultprescript.cpp
 
 debug\prescription.obj: prescription.cpp prescription.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -8226,6 +8209,7 @@ debug\prescription.obj: prescription.cpp prescription.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\prescription.obj prescription.cpp
 
 debug\editpatient.obj: editpatient.cpp editpatient.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -8515,6 +8499,7 @@ debug\editpatient.obj: editpatient.cpp editpatient.h \
 		ui_editpatient2.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\editpatient.obj editpatient.cpp
 
 debug\editpatient2.obj: editpatient2.cpp editpatient2.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -8804,6 +8789,7 @@ debug\editpatient2.obj: editpatient2.cpp editpatient2.h \
 		C:\Qt\5.8\msvc2015_64\include\QtCore\QRegExp \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\editpatient2.obj editpatient2.cpp
 
 debug\listconsults.obj: listconsults.cpp listconsults.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QListWidgetItem \
@@ -9087,6 +9073,7 @@ debug\listconsults.obj: listconsults.cpp listconsults.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\listconsults.obj listconsults.cpp
 
 debug\addstaff.obj: addstaff.cpp addstaff.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -9371,6 +9358,7 @@ debug\addstaff.obj: addstaff.cpp addstaff.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\addstaff.obj addstaff.cpp
 
 debug\removestaff.obj: removestaff.cpp removestaff.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -9655,6 +9643,7 @@ debug\removestaff.obj: removestaff.cpp removestaff.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\removestaff.obj removestaff.cpp
 
 debug\editstaff.obj: editstaff.cpp editstaff.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -9940,6 +9929,7 @@ debug\editstaff.obj: editstaff.cpp editstaff.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\editstaff.obj editstaff.cpp
 
 debug\editstaff2.obj: editstaff2.cpp editstaff2.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QDialog \
@@ -10224,56 +10214,82 @@ debug\editstaff2.obj: editstaff2.cpp editstaff2.h \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.8\msvc2015_64\include\QtWidgets\qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\editstaff2.obj editstaff2.cpp
 
 debug\qrc_bg2.obj: debug\qrc_bg2.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_bg2.obj debug\qrc_bg2.cpp
 
 debug\qrc_bg3.obj: debug\qrc_bg3.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_bg3.obj debug\qrc_bg3.cpp
 
 debug\qrc_bg4.obj: debug\qrc_bg4.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_bg4.obj debug\qrc_bg4.cpp
 
 debug\qrc_red.obj: debug\qrc_red.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_red.obj debug\qrc_red.cpp
 
 debug\qrc_green.obj: debug\qrc_green.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_green.obj debug\qrc_green.cpp
 
 debug\qrc_add.obj: debug\qrc_add.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_add.obj debug\qrc_add.cpp
 
 debug\qrc_colors.obj: debug\qrc_colors.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\qrc_colors.obj debug\qrc_colors.cpp
 
 debug\moc_mainwindow.obj: debug\moc_mainwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_mainwindow.obj debug\moc_mainwindow.cpp
 
 debug\moc_searchinventory.obj: debug\moc_searchinventory.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_searchinventory.obj debug\moc_searchinventory.cpp
 
 debug\moc_removeinventory.obj: debug\moc_removeinventory.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_removeinventory.obj debug\moc_removeinventory.cpp
 
 debug\moc_addinventory.obj: debug\moc_addinventory.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_addinventory.obj debug\moc_addinventory.cpp
 
 debug\moc_checkin.obj: debug\moc_checkin.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_checkin.obj debug\moc_checkin.cpp
 
 debug\moc_maindirectory.obj: debug\moc_maindirectory.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_maindirectory.obj debug\moc_maindirectory.cpp
 
 debug\moc_addpatient.obj: debug\moc_addpatient.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_addpatient.obj debug\moc_addpatient.cpp
 
 debug\moc_removepatient.obj: debug\moc_removepatient.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_removepatient.obj debug\moc_removepatient.cpp
 
 debug\moc_searchpatient.obj: debug\moc_searchpatient.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_searchpatient.obj debug\moc_searchpatient.cpp
 
 debug\moc_consultprescript.obj: debug\moc_consultprescript.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_consultprescript.obj debug\moc_consultprescript.cpp
 
 debug\moc_prescription.obj: debug\moc_prescription.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_prescription.obj debug\moc_prescription.cpp
 
 debug\moc_editpatient.obj: debug\moc_editpatient.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_editpatient.obj debug\moc_editpatient.cpp
 
 debug\moc_editpatient2.obj: debug\moc_editpatient2.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_editpatient2.obj debug\moc_editpatient2.cpp
 
 debug\moc_listconsults.obj: debug\moc_listconsults.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_listconsults.obj debug\moc_listconsults.cpp
 
 debug\moc_addstaff.obj: debug\moc_addstaff.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_addstaff.obj debug\moc_addstaff.cpp
 
 debug\moc_removestaff.obj: debug\moc_removestaff.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_removestaff.obj debug\moc_removestaff.cpp
 
 debug\moc_editstaff.obj: debug\moc_editstaff.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_editstaff.obj debug\moc_editstaff.cpp
 
 debug\moc_editstaff2.obj: debug\moc_editstaff2.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\moc_editstaff2.obj debug\moc_editstaff2.cpp
 
 ####### Install
 

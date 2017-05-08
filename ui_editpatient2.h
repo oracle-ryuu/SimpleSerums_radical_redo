@@ -57,7 +57,7 @@ public:
         if (editpatient2->objectName().isEmpty())
             editpatient2->setObjectName(QStringLiteral("editpatient2"));
         editpatient2->resize(517, 776);
-        editpatient2->setStyleSheet(QStringLiteral("background-image: url(:/red/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG6.png);"));
+        editpatient2->setStyleSheet(QStringLiteral("background-image: url(:/new/prefix1/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/red add.png);"));
         horizontalLayoutWidget = new QWidget(editpatient2);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(50, 660, 311, 51));
@@ -82,41 +82,51 @@ public:
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         label_14 = new QLabel(verticalLayoutWidget_2);
         label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setAutoFillBackground(false);
+        label_14->setStyleSheet(QLatin1String("background-image: url(:/new/prefix1/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/red add.png);\n"
+"background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_14);
 
         label_15 = new QLabel(verticalLayoutWidget_2);
         label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_15);
 
         label_16 = new QLabel(verticalLayoutWidget_2);
         label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_16);
 
         label_20 = new QLabel(verticalLayoutWidget_2);
         label_20->setObjectName(QStringLiteral("label_20"));
+        label_20->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_20);
 
         label_21 = new QLabel(verticalLayoutWidget_2);
         label_21->setObjectName(QStringLiteral("label_21"));
+        label_21->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_21);
 
         label_22 = new QLabel(verticalLayoutWidget_2);
         label_22->setObjectName(QStringLiteral("label_22"));
+        label_22->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_22);
 
         label_23 = new QLabel(verticalLayoutWidget_2);
         label_23->setObjectName(QStringLiteral("label_23"));
+        label_23->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_23);
 
         label_24 = new QLabel(verticalLayoutWidget_2);
         label_24->setObjectName(QStringLiteral("label_24"));
+        label_24->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_3->addWidget(label_24);
 

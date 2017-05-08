@@ -43,7 +43,7 @@ public:
         if (addInventory->objectName().isEmpty())
             addInventory->setObjectName(QStringLiteral("addInventory"));
         addInventory->resize(400, 300);
-        addInventory->setAutoFillBackground(true);
+        addInventory->setAutoFillBackground(false);
         addInventory->setStyleSheet(QStringLiteral("background-image: url(:/green/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG5.png);"));
         pushButton = new QPushButton(addInventory);
         pushButton->setObjectName(QStringLiteral("pushButton"));
@@ -64,6 +64,7 @@ public:
 
         lineEdit = new QLineEdit(verticalLayoutWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg green.png);"));
 
         verticalLayout->addWidget(lineEdit);
 
@@ -74,6 +75,7 @@ public:
 
         lineEdit_2 = new QLineEdit(verticalLayoutWidget);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg green.png);"));
 
         verticalLayout->addWidget(lineEdit_2);
 
@@ -84,6 +86,7 @@ public:
 
         lineEdit_3 = new QLineEdit(verticalLayoutWidget);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lineEdit_3->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg green.png);"));
 
         verticalLayout->addWidget(lineEdit_3);
 

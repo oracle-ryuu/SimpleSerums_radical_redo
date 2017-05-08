@@ -51,7 +51,7 @@ public:
         if (addstaff->objectName().isEmpty())
             addstaff->setObjectName(QStringLiteral("addstaff"));
         addstaff->resize(400, 300);
-        addstaff->setAutoFillBackground(true);
+        addstaff->setAutoFillBackground(false);
         addstaff->setStyleSheet(QLatin1String("background-image: url(:/bg4/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);\n"
 "background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/admin.png);"));
         buttonBox = new QDialogButtonBox(addstaff);
@@ -67,36 +67,44 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         lineEdit_ssn = new QLineEdit(verticalLayoutWidget);
         lineEdit_ssn->setObjectName(QStringLiteral("lineEdit_ssn"));
+        lineEdit_ssn->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);"));
 
         verticalLayout->addWidget(lineEdit_ssn);
 
         lineEdit_user = new QLineEdit(verticalLayoutWidget);
         lineEdit_user->setObjectName(QStringLiteral("lineEdit_user"));
+        lineEdit_user->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);"));
 
         verticalLayout->addWidget(lineEdit_user);
 
         lineEdit_password = new QLineEdit(verticalLayoutWidget);
         lineEdit_password->setObjectName(QStringLiteral("lineEdit_password"));
+        lineEdit_password->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);"));
 
         verticalLayout->addWidget(lineEdit_password);
 
         lineEdit_name = new QLineEdit(verticalLayoutWidget);
         lineEdit_name->setObjectName(QStringLiteral("lineEdit_name"));
+        lineEdit_name->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);"));
 
         verticalLayout->addWidget(lineEdit_name);
 
         lineEdit_title = new QLineEdit(verticalLayoutWidget);
         lineEdit_title->setObjectName(QStringLiteral("lineEdit_title"));
+        lineEdit_title->setStyleSheet(QLatin1String("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);\n"
+"background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);"));
 
         verticalLayout->addWidget(lineEdit_title);
 
         lineEdit_address = new QLineEdit(verticalLayoutWidget);
         lineEdit_address->setObjectName(QStringLiteral("lineEdit_address"));
+        lineEdit_address->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);"));
 
         verticalLayout->addWidget(lineEdit_address);
 
         lineEdit_phone = new QLineEdit(verticalLayoutWidget);
         lineEdit_phone->setObjectName(QStringLiteral("lineEdit_phone"));
+        lineEdit_phone->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg purple.png);"));
 
         verticalLayout->addWidget(lineEdit_phone);
 

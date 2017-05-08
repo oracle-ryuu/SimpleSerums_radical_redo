@@ -75,43 +75,50 @@ public:
 
         label_3 = new QLabel(verticalLayoutWidget_2);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setAutoFillBackground(true);
+        label_3->setAutoFillBackground(false);
         label_3->setStyleSheet(QStringLiteral("background-image: url(:/img/img/BG3.png);"));
 
         verticalLayout_2->addWidget(label_3);
 
         label_6 = new QLabel(verticalLayoutWidget_2);
         label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_2->addWidget(label_6);
 
         label_9 = new QLabel(verticalLayoutWidget_2);
         label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_2->addWidget(label_9);
 
         label_8 = new QLabel(verticalLayoutWidget_2);
         label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_2->addWidget(label_8);
 
         label_7 = new QLabel(verticalLayoutWidget_2);
         label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_2->addWidget(label_7);
 
         label_5 = new QLabel(verticalLayoutWidget_2);
         label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_2->addWidget(label_5);
 
         label_2 = new QLabel(verticalLayoutWidget_2);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_2->addWidget(label_2);
 
         label = new QLabel(verticalLayoutWidget_2);
         label->setObjectName(QStringLiteral("label"));
+        label->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
 
         verticalLayout_2->addWidget(label);
 
@@ -128,41 +135,49 @@ public:
 
         pat_Name = new QLineEdit(verticalLayoutWidget);
         pat_Name->setObjectName(QStringLiteral("pat_Name"));
+        pat_Name->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(pat_Name);
 
         DOB = new QLineEdit(verticalLayoutWidget);
         DOB->setObjectName(QStringLiteral("DOB"));
+        DOB->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(DOB);
 
         Address = new QLineEdit(verticalLayoutWidget);
         Address->setObjectName(QStringLiteral("Address"));
+        Address->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(Address);
 
         Sex = new QLineEdit(verticalLayoutWidget);
         Sex->setObjectName(QStringLiteral("Sex"));
+        Sex->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(Sex);
 
         pat_Phone = new QLineEdit(verticalLayoutWidget);
         pat_Phone->setObjectName(QStringLiteral("pat_Phone"));
+        pat_Phone->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(pat_Phone);
 
         ins_Name = new QLineEdit(verticalLayoutWidget);
         ins_Name->setObjectName(QStringLiteral("ins_Name"));
+        ins_Name->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(ins_Name);
 
         ins_Nom = new QLineEdit(verticalLayoutWidget);
         ins_Nom->setObjectName(QStringLiteral("ins_Nom"));
+        ins_Nom->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(ins_Nom);
 
         doc_ID = new QLineEdit(verticalLayoutWidget);
         doc_ID->setObjectName(QStringLiteral("doc_ID"));
+        doc_ID->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(doc_ID);
 
