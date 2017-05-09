@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'consultprescript.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -110,13 +110,13 @@ public:
 
     void retranslateUi(QDialog *consultPrescript)
     {
-        consultPrescript->setWindowTitle(QApplication::translate("consultPrescript", "Dialog", Q_NULLPTR));
-        label_3_Patient_name->setText(QApplication::translate("consultPrescript", "[+] Patients name", Q_NULLPTR));
-        label->setText(QApplication::translate("consultPrescript", "Timestamp", Q_NULLPTR));
-        dateTimeEdit->setDisplayFormat(QApplication::translate("consultPrescript", "yyyy-MM-dd hh:mm ", Q_NULLPTR));
-        label_2->setText(QApplication::translate("consultPrescript", "Consult", Q_NULLPTR));
-        checkBox->setText(QApplication::translate("consultPrescript", "Precription for this Patient?", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("consultPrescript", "Continue", Q_NULLPTR));
+        consultPrescript->setWindowTitle(QApplication::translate("consultPrescript", "Cal Clinic: Consultation", 0));
+        label_3_Patient_name->setText(QApplication::translate("consultPrescript", "[+] Patients name", 0));
+        label->setText(QApplication::translate("consultPrescript", "Timestamp", 0));
+        dateTimeEdit->setDisplayFormat(QApplication::translate("consultPrescript", "yyyy-MM-dd hh:mm ", 0));
+        label_2->setText(QApplication::translate("consultPrescript", "Consult", 0));
+        checkBox->setText(QApplication::translate("consultPrescript", "Precription for this Patient?", 0));
+        pushButton->setText(QApplication::translate("consultPrescript", "Continue", 0));
     } // retranslateUi
 
 };

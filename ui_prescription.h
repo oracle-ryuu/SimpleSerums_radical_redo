@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'prescription.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -90,10 +90,10 @@ public:
 
     void retranslateUi(QDialog *prescription)
     {
-        prescription->setWindowTitle(QApplication::translate("prescription", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("prescription", "Item ID", Q_NULLPTR));
-        label_2->setText(QApplication::translate("prescription", "Quantity", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("prescription", "Add prescription", Q_NULLPTR));
+        prescription->setWindowTitle(QApplication::translate("prescription", "Cal Clinic: Prescription", 0));
+        label->setText(QApplication::translate("prescription", "Item ID", 0));
+        label_2->setText(QApplication::translate("prescription", "Quantity", 0));
+        pushButton->setText(QApplication::translate("prescription", "Add prescription", 0));
     } // retranslateUi
 
 };

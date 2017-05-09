@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'listconsults.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -78,10 +78,10 @@ public:
 
     void retranslateUi(QDialog *listconsults)
     {
-        listconsults->setWindowTitle(QApplication::translate("listconsults", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("listconsults", "Consults for:", Q_NULLPTR));
-        label_2->setText(QApplication::translate("listconsults", "[+] patient", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("listconsults", "List", Q_NULLPTR));
+        listconsults->setWindowTitle(QApplication::translate("listconsults", "Cal Clinic: Consult List", 0));
+        label->setText(QApplication::translate("listconsults", "Consults for:", 0));
+        label_2->setText(QApplication::translate("listconsults", "[+] patient", 0));
+        pushButton->setText(QApplication::translate("listconsults", "List", 0));
     } // retranslateUi
 
 };

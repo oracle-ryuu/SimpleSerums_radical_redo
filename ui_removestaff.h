@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'removestaff.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -71,8 +71,8 @@ public:
 
     void retranslateUi(QDialog *removestaff)
     {
-        removestaff->setWindowTitle(QApplication::translate("removestaff", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("removestaff", "Staff SSN", Q_NULLPTR));
+        removestaff->setWindowTitle(QApplication::translate("removestaff", "Cal Clinic: Remove Staff", 0));
+        label->setText(QApplication::translate("removestaff", "Staff SSN", 0));
     } // retranslateUi
 
 };

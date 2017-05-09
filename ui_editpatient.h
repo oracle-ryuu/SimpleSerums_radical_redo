@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'editpatient.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -82,10 +82,10 @@ public:
 
     void retranslateUi(QDialog *editpatient)
     {
-        editpatient->setWindowTitle(QApplication::translate("editpatient", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("editpatient", "Patient ID", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("editpatient", "OK", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("editpatient", "Cancel", Q_NULLPTR));
+        editpatient->setWindowTitle(QApplication::translate("editpatient", "Cal Clinic: Search Patient", 0));
+        label->setText(QApplication::translate("editpatient", "Patient ID", 0));
+        pushButton_2->setText(QApplication::translate("editpatient", "OK", 0));
+        pushButton->setText(QApplication::translate("editpatient", "Cancel", 0));
     } // retranslateUi
 
 };

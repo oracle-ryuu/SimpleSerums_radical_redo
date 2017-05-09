@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'editpatient2.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -184,17 +184,17 @@ public:
 
     void retranslateUi(QDialog *editpatient2)
     {
-        editpatient2->setWindowTitle(QApplication::translate("editpatient2", "Dialog", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("editpatient2", "ok", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("editpatient2", "cancel", Q_NULLPTR));
-        label_14->setText(QApplication::translate("editpatient2", "Name", Q_NULLPTR));
-        label_15->setText(QApplication::translate("editpatient2", "Date of birth (yyyy-mm-dd)", Q_NULLPTR));
-        label_16->setText(QApplication::translate("editpatient2", "Address", Q_NULLPTR));
-        label_20->setText(QApplication::translate("editpatient2", "Sex", Q_NULLPTR));
-        label_21->setText(QApplication::translate("editpatient2", "Phone", Q_NULLPTR));
-        label_22->setText(QApplication::translate("editpatient2", "Insurance Comp", Q_NULLPTR));
-        label_23->setText(QApplication::translate("editpatient2", "Customer Number", Q_NULLPTR));
-        label_24->setText(QApplication::translate("editpatient2", "Doctor ID", Q_NULLPTR));
+        editpatient2->setWindowTitle(QApplication::translate("editpatient2", "Cal Clinic: Edit Patient", 0));
+        pushButton_3->setText(QApplication::translate("editpatient2", "ok", 0));
+        pushButton_4->setText(QApplication::translate("editpatient2", "cancel", 0));
+        label_14->setText(QApplication::translate("editpatient2", "Name", 0));
+        label_15->setText(QApplication::translate("editpatient2", "Date of birth (yyyy-mm-dd)", 0));
+        label_16->setText(QApplication::translate("editpatient2", "Address", 0));
+        label_20->setText(QApplication::translate("editpatient2", "Sex", 0));
+        label_21->setText(QApplication::translate("editpatient2", "Phone", 0));
+        label_22->setText(QApplication::translate("editpatient2", "Insurance Comp", 0));
+        label_23->setText(QApplication::translate("editpatient2", "Customer Number", 0));
+        label_24->setText(QApplication::translate("editpatient2", "Doctor ID", 0));
         pat_Phone_2->setText(QString());
     } // retranslateUi
 

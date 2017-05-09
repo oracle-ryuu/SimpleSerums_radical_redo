@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>pull actually it sa</string>
+   <string>Cal Clinic: Main Directory</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/img/img/BG3.png);</string>

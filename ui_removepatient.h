@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'removepatient.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -88,11 +88,11 @@ public:
 
     void retranslateUi(QDialog *removepatient)
     {
-        removepatient->setWindowTitle(QApplication::translate("removepatient", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("removepatient", "Patient ID", Q_NULLPTR));
-        label_2->setText(QApplication::translate("removepatient", "Remove patient", Q_NULLPTR));
-        ok->setText(QApplication::translate("removepatient", "OK", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("removepatient", "Cancel", Q_NULLPTR));
+        removepatient->setWindowTitle(QApplication::translate("removepatient", "Cal Clinic: Remove Patient", 0));
+        label->setText(QApplication::translate("removepatient", "Patient ID", 0));
+        label_2->setText(QApplication::translate("removepatient", "Remove patient", 0));
+        ok->setText(QApplication::translate("removepatient", "OK", 0));
+        pushButton->setText(QApplication::translate("removepatient", "Cancel", 0));
     } // retranslateUi
 
 };

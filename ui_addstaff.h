@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'addstaff.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -159,14 +159,14 @@ public:
 
     void retranslateUi(QDialog *addstaff)
     {
-        addstaff->setWindowTitle(QApplication::translate("addstaff", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("addstaff", "SSN", Q_NULLPTR));
-        label_2->setText(QApplication::translate("addstaff", "Username", Q_NULLPTR));
-        label_3->setText(QApplication::translate("addstaff", "Password", Q_NULLPTR));
-        label_4->setText(QApplication::translate("addstaff", "Full Name", Q_NULLPTR));
-        label_5->setText(QApplication::translate("addstaff", "Title", Q_NULLPTR));
-        label_6->setText(QApplication::translate("addstaff", "Address", Q_NULLPTR));
-        label_7->setText(QApplication::translate("addstaff", "Phone", Q_NULLPTR));
+        addstaff->setWindowTitle(QApplication::translate("addstaff", "Cal Clinic: Add Staff", 0));
+        label->setText(QApplication::translate("addstaff", "SSN", 0));
+        label_2->setText(QApplication::translate("addstaff", "Username", 0));
+        label_3->setText(QApplication::translate("addstaff", "Password", 0));
+        label_4->setText(QApplication::translate("addstaff", "Full Name", 0));
+        label_5->setText(QApplication::translate("addstaff", "Title", 0));
+        label_6->setText(QApplication::translate("addstaff", "Address", 0));
+        label_7->setText(QApplication::translate("addstaff", "Phone", 0));
     } // retranslateUi
 
 };

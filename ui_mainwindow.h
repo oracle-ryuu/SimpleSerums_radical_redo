@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -50,7 +50,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(400, 360);
-        MainWindow->setAutoFillBackground(true);
+        MainWindow->setAutoFillBackground(false);
         MainWindow->setStyleSheet(QStringLiteral("background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -108,7 +108,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 26));
+        menuBar->setGeometry(QRect(0, 0, 400, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -125,11 +125,11 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        label_2->setText(QApplication::translate("MainWindow", "Username", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "Password", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "login", Q_NULLPTR));
-        label_4->setText(QApplication::translate("MainWindow", "[+] Status", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Cal Clinic: Login", 0));
+        label_2->setText(QApplication::translate("MainWindow", "Username", 0));
+        label->setText(QApplication::translate("MainWindow", "Password", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "login", 0));
+        label_4->setText(QApplication::translate("MainWindow", "[+] Status", 0));
     } // retranslateUi
 
 };

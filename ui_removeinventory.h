@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'removeinventory.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -61,10 +61,10 @@ public:
 
     void retranslateUi(QWidget *removeInventory)
     {
-        removeInventory->setWindowTitle(QApplication::translate("removeInventory", "Form", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("removeInventory", "Remove", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("removeInventory", "Cancel", Q_NULLPTR));
-        label->setText(QApplication::translate("removeInventory", "Enter Item ID", Q_NULLPTR));
+        removeInventory->setWindowTitle(QApplication::translate("removeInventory", "Cal Clinic: Remove Inventory", 0));
+        pushButton->setText(QApplication::translate("removeInventory", "Remove", 0));
+        pushButton_2->setText(QApplication::translate("removeInventory", "Cancel", 0));
+        label->setText(QApplication::translate("removeInventory", "Enter Item ID", 0));
     } // retranslateUi
 
 };

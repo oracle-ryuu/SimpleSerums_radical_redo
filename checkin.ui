@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Cal Clinic: Check In</string>
   </property>
   <property name="autoFillBackground">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/bg4/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);

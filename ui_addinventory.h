@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'addinventory.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -104,14 +104,14 @@ public:
 
     void retranslateUi(QWidget *addInventory)
     {
-        addInventory->setWindowTitle(QApplication::translate("addInventory", "Form", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("addInventory", "Add New", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("addInventory", "Cancel", Q_NULLPTR));
-        label->setText(QApplication::translate("addInventory", "Enter Item ID", Q_NULLPTR));
-        label_3->setText(QApplication::translate("addInventory", "Enter Item Name", Q_NULLPTR));
-        label_2->setText(QApplication::translate("addInventory", "Enter Item Quantity", Q_NULLPTR));
-        pushButton_increase->setText(QApplication::translate("addInventory", "Increase existing", Q_NULLPTR));
-        pushButton_decrease->setText(QApplication::translate("addInventory", "Decrease Existing", Q_NULLPTR));
+        addInventory->setWindowTitle(QApplication::translate("addInventory", "Cal Clinic: Add Inventory", 0));
+        pushButton->setText(QApplication::translate("addInventory", "Add New", 0));
+        pushButton_2->setText(QApplication::translate("addInventory", "Cancel", 0));
+        label->setText(QApplication::translate("addInventory", "Enter Item ID", 0));
+        label_3->setText(QApplication::translate("addInventory", "Enter Item Name", 0));
+        label_2->setText(QApplication::translate("addInventory", "Enter Item Quantity", 0));
+        pushButton_increase->setText(QApplication::translate("addInventory", "Increase existing", 0));
+        pushButton_decrease->setText(QApplication::translate("addInventory", "Decrease Existing", 0));
     } // retranslateUi
 
 };

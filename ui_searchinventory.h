@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'searchinventory.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -86,13 +86,13 @@ public:
 
     void retranslateUi(QWidget *searchInventory)
     {
-        searchInventory->setWindowTitle(QApplication::translate("searchInventory", "Form", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("searchInventory", "Cancel", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("searchInventory", "Search", Q_NULLPTR));
-        label->setText(QApplication::translate("searchInventory", "Enter Item ID", Q_NULLPTR));
-        label_2->setText(QApplication::translate("searchInventory", "Enter Item Name", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("searchInventory", "Search", Q_NULLPTR));
-        label_3->setText(QApplication::translate("searchInventory", "or", Q_NULLPTR));
+        searchInventory->setWindowTitle(QApplication::translate("searchInventory", "Cal Clinic: Search Inventory", 0));
+        pushButton_2->setText(QApplication::translate("searchInventory", "Cancel", 0));
+        pushButton->setText(QApplication::translate("searchInventory", "Search", 0));
+        label->setText(QApplication::translate("searchInventory", "Enter Item ID", 0));
+        label_2->setText(QApplication::translate("searchInventory", "Enter Item Name", 0));
+        pushButton_3->setText(QApplication::translate("searchInventory", "Search", 0));
+        label_3->setText(QApplication::translate("searchInventory", "or", 0));
     } // retranslateUi
 
 };

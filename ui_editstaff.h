@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'editstaff.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -69,8 +69,8 @@ public:
 
     void retranslateUi(QDialog *editstaff)
     {
-        editstaff->setWindowTitle(QApplication::translate("editstaff", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("editstaff", "Staff SSN", Q_NULLPTR));
+        editstaff->setWindowTitle(QApplication::translate("editstaff", "Cal Clinic: Search Staff", 0));
+        label->setText(QApplication::translate("editstaff", "Staff SSN", 0));
     } // retranslateUi
 
 };

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'addpatient.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -130,6 +130,7 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         SSN = new QLineEdit(verticalLayoutWidget);
         SSN->setObjectName(QStringLiteral("SSN"));
+        SSN->setStyleSheet(QStringLiteral("background-image: url(:/txrbkgd/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/text bg orange.png);"));
 
         verticalLayout->addWidget(SSN);
 
@@ -205,19 +206,19 @@ public:
 
     void retranslateUi(QDialog *addPatient)
     {
-        addPatient->setWindowTitle(QApplication::translate("addPatient", "Dialog", Q_NULLPTR));
-        label_4->setText(QApplication::translate("addPatient", "Social Security", Q_NULLPTR));
-        label_3->setText(QApplication::translate("addPatient", "Name", Q_NULLPTR));
-        label_6->setText(QApplication::translate("addPatient", "Date of birth (yyyy-mm-dd)", Q_NULLPTR));
-        label_9->setText(QApplication::translate("addPatient", "Address", Q_NULLPTR));
-        label_8->setText(QApplication::translate("addPatient", "Sex", Q_NULLPTR));
-        label_7->setText(QApplication::translate("addPatient", "Phone", Q_NULLPTR));
-        label_5->setText(QApplication::translate("addPatient", "Insurance Comp", Q_NULLPTR));
-        label_2->setText(QApplication::translate("addPatient", "Customer Number", Q_NULLPTR));
-        label->setText(QApplication::translate("addPatient", "Doctor ID", Q_NULLPTR));
+        addPatient->setWindowTitle(QApplication::translate("addPatient", "Cal Clinic: Add Patient", 0));
+        label_4->setText(QApplication::translate("addPatient", "Social Security", 0));
+        label_3->setText(QApplication::translate("addPatient", "Name", 0));
+        label_6->setText(QApplication::translate("addPatient", "Date of birth (yyyy-mm-dd)", 0));
+        label_9->setText(QApplication::translate("addPatient", "Address", 0));
+        label_8->setText(QApplication::translate("addPatient", "Sex", 0));
+        label_7->setText(QApplication::translate("addPatient", "Phone", 0));
+        label_5->setText(QApplication::translate("addPatient", "Insurance Comp", 0));
+        label_2->setText(QApplication::translate("addPatient", "Customer Number", 0));
+        label->setText(QApplication::translate("addPatient", "Doctor ID", 0));
         pat_Phone->setText(QString());
-        pushButton_2->setText(QApplication::translate("addPatient", "ok", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("addPatient", "cancel", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("addPatient", "ok", 0));
+        pushButton->setText(QApplication::translate("addPatient", "cancel", 0));
     } // retranslateUi
 
 };

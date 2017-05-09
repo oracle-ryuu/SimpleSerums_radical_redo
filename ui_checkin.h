@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'checkin.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -36,7 +36,7 @@ public:
         if (checkIn->objectName().isEmpty())
             checkIn->setObjectName(QStringLiteral("checkIn"));
         checkIn->resize(400, 300);
-        checkIn->setAutoFillBackground(true);
+        checkIn->setAutoFillBackground(false);
         checkIn->setStyleSheet(QLatin1String("background-image: url(:/bg4/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/BG3.png);\n"
 "background-image: url(:/BGs/build-SimpleSerum-Desktop_Qt_5_8_0_MSVC2015_64bit-Debug/consult.png);"));
         label = new QLabel(checkIn);
@@ -65,11 +65,11 @@ public:
 
     void retranslateUi(QWidget *checkIn)
     {
-        checkIn->setWindowTitle(QApplication::translate("checkIn", "Form", Q_NULLPTR));
-        label->setText(QApplication::translate("checkIn", "Enter Patient Name", Q_NULLPTR));
-        label_2->setText(QApplication::translate("checkIn", "Enter Patient Insurance Number", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("checkIn", "Queue", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("checkIn", "Cancel", Q_NULLPTR));
+        checkIn->setWindowTitle(QApplication::translate("checkIn", "Cal Clinic: Check In", 0));
+        label->setText(QApplication::translate("checkIn", "Enter Patient Name", 0));
+        label_2->setText(QApplication::translate("checkIn", "Enter Patient Insurance Number", 0));
+        pushButton->setText(QApplication::translate("checkIn", "Queue", 0));
+        pushButton_2->setText(QApplication::translate("checkIn", "Cancel", 0));
     } // retranslateUi
 
 };
