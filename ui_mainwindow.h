@@ -125,7 +125,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Cal Clinic: Login", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Cal Clinic: Main Window", 0));
         label_2->setText(QApplication::translate("MainWindow", "Username", 0));
         label->setText(QApplication::translate("MainWindow", "Password", 0));
         pushButton->setText(QApplication::translate("MainWindow", "login", 0));
